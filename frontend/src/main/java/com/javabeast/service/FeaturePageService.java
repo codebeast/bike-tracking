@@ -21,9 +21,9 @@ public class FeaturePageService {
     public List<LandingPageGroup> loadGroups() {
         try {
             final Language[] values = Language.values();
-            for (final Language value : values) {
-                final File dir = new File(value.getLandingPageUrl().getFile());
-                final LandingPageGroup landingPageGroup = mapper.readValue(dir, LandingPageGroup.class);
+            for (final Language language : values) {
+                final InputStream resourceAsStream = FeaturePageService.class.getResourceAsStream(language.getLandingPageUrl());
+                final LandingPageGroup landingPageGroup = mapper.readValue(resourceAsStream, LandingPageGroup.class);
                 landingPageGroups.add(landingPageGroup);
             }
         } catch (Exception e) {

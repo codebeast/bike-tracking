@@ -18,12 +18,12 @@ public enum Language {
 
     private final String displayName;
     private final String languageName;
-    private final URL landingPageUrl;
+    private final String landingPageUrl;
 
     Language(String displayName, String languageName, String landingPageUrl) {
         this.displayName = displayName;
         this.languageName = languageName;
-        this.landingPageUrl = Language.class.getResource("/landingpage/" + landingPageUrl);
+        this.landingPageUrl = "/landingpage/" + landingPageUrl;
     }
 
     public String getDisplayName() {
@@ -34,7 +34,7 @@ public enum Language {
         return languageName;
     }
 
-    public URL getLandingPageUrl() {
+    public String getLandingPageUrl() {
         return landingPageUrl;
     }
 
