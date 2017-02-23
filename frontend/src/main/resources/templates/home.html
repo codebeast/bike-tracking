@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns="https://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <title th:text="#{home.title}"></title>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
@@ -23,19 +23,19 @@
 
     <meta property="og:title" th:content="#{home.title}"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:url" th:content="${canonical}"/>
+    <!--<meta property="og:url" th:content="${canonical}"/>-->
     <meta property="og:description" th:content="#{home.meta.description}"/>
 
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:url" th:content="${canonical}"/>
+    <!--<meta name="twitter:url" th:content="${canonical}"/>-->
     <meta name="twitter:title" th:content="#{home.title}"/>
     <meta name="twitter:description" th:content="#{home.meta.description}"/>
 
-    <link th:href="${#httpServletRequest.requestURL.toString()}"/>
+    <!--<link th:href="${#httpServletRequest.requestURL.toString()}"/>-->
 
-    <link rel="alternate" th:each="state : ${T(com.javabeast.domain.Language).values()}"
-          th:hreflang="${state.displayName}"
-          th:href="${#httpServletRequest.requestURL.toString()} + '?lang=' + ${state.displayName}"/>
+    <!--<link rel="alternate" th:each="state : ${T(com.javabeast.domain.Language).values()}"-->
+          <!--th:hreflang="${state.displayName}"-->
+          <!--th:href="${#httpServletRequest.requestURL.toString()} + '?lang=' + ${state.displayName}"/>-->
     <!-- Hotjar Tracking Code for https://bike-tracker.com -->
     <script>
     (function(h,o,t,j,a,r){
@@ -53,10 +53,10 @@
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
 
-    <li th:each="state : ${T(com.javabeast.domain.Language).values()}" th:value="${state}">
-        <a th:href="${#httpServletRequest.requestURL.toString()} + '?lang=' + ${state.displayName}"
-           th:text="${state.languageName}">Placeholder</a>
-    </li>
+    <!--<li th:each="state : ${T(com.javabeast.domain.Language).values()}" th:value="${state}">-->
+        <!--<a th:href="${#httpServletRequest.requestURL.toString()} + '?lang=' + ${state.displayName}"-->
+           <!--th:text="${state.languageName}">Placeholder</a>-->
+    <!--</li>-->
 </ul>
 
 <div class="navbar-fixed">
@@ -98,13 +98,13 @@
                             <p class="black-text flow-text" th:text="#{home.landing.blurb}">Placeholder</p>
 
                             <div class="col s6 m6 l6 left">
-                                <a href="http://materializecss.com/getting-started.html" id="buy-button"
+                                <a href="https://materializecss.com/getting-started.html" id="buy-button"
                                    class="btn-large waves-effect waves-light orange lighten-1"
                                    th:text="#{home.landing.button.pay}">Placeholder</a>
                             </div>
 
                             <div class="col s6 m6 l6 left">
-                                <a href="http://materializecss.com/getting-started.html" id="more-button"
+                                <a href="https://materializecss.com/getting-started.html" id="more-button"
                                    class="btn-large waves-effect waves-light white black-text lighten-1"
                                    th:text="#{home.landing.button.features}">Placeholder</a>
                             </div>
@@ -511,7 +511,7 @@
     </div>
     <div class="footer-copyright">
         <div class="container">
-            Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            Made by <a class="brown-text text-lighten-3" href="https://materializecss.com">Materialize</a>
         </div>
     </div>
 </footer>
