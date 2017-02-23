@@ -16,7 +16,7 @@
     <link type="text/css" rel="stylesheet" href="stylesheets/pricing.css" media="screen"/>
 
 
-    <link th:href="${#httpServletRequest.requestURL.toString()}" rel="canonical"/>
+    <!--<link th:href="${#httpServletRequest.requestURL.toString()}" rel="canonical"/>-->
     <meta name="robots" content="index,follow"/>
     <meta name="description" th:content="#{home.meta.description}"/>
 
@@ -291,14 +291,12 @@
             <h3>We aim to keep the pricing as simple as possible</h3>
         </div>
 
-        <!-- MATERIALIZE CSS USES 12 COLUMN GRID SYSTEM, DETAILS http://materializecss.com/grid.html -->
         <div class="col s12 m4">
 
             <!-- START PRICING PLAN -->
             <div class="card pricing style-2">
 
                 <!-- START PLAN TITLE DIV. -->
-                <!-- CHANGE COLOR BY CHANGING LAST CSS CLASS (teal) AVAILABLE COLOR CLASSES LISTED HERE http://materializecss.com/color.html -->
                 <div class="plan-title waves-effect waves-block waves-light teal">
                     <h5 class="white-text">
                         <span class="plan">MONTHLY</span>
