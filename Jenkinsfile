@@ -8,7 +8,12 @@ pipeline {
         }
         stage('docker-build') {
              steps {
-                 sh 'sudo mvn docker:build docker:push
+                 sh 'sudo mvn docker:build'
+              }
+         }
+        stage('docker-push') {
+              steps {
+                 sh 'sudo mvn docker:push'
               }
          }
     }
