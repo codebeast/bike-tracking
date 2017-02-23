@@ -37,6 +37,8 @@ public class FeaturePageService {
             e.printStackTrace();
         } catch (URISyntaxException e) {
             e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return landingPageGroups;
     }
