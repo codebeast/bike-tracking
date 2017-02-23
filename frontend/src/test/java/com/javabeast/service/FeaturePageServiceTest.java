@@ -15,7 +15,7 @@ public class FeaturePageServiceTest {
     @Test
     public void loadGroups() throws Exception {
         final List<LandingPageGroup> landingPageGroups = featurePageService.loadGroups();
-        assertEquals("should load group", 2, landingPageGroups.size());
+        assertEquals("should load group", 12, landingPageGroups.size());
     }
 
 }

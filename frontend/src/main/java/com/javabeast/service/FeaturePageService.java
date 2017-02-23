@@ -3,14 +3,10 @@ package com.javabeast.service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.javabeast.domain.LandingPage;
 import com.javabeast.domain.LandingPageGroup;
+import com.javabeast.domain.Language;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -22,21 +18,14 @@ public class FeaturePageService {
     private static final ObjectMapper mapper = new ObjectMapper();
 
 
-    private static final URL LANDING_PAGE_URLS = FeaturePageService.class.getResource("/landingpage/");
-
-
     public List<LandingPageGroup> loadGroups() {
-
         try {
-            final File dir = new File(LANDING_PAGE_URLS.toURI());
-            for (final File nextFile : dir.listFiles()) {
-                final LandingPageGroup landingPageGroup = mapper.readValue(nextFile, LandingPageGroup.class);
+            final Language[] values = Language.values();
+            for (final Language value : values) {
+                final File dir = new File(value.getLandingPageUrl().getFile());
+                final LandingPageGroup landingPageGroup = mapper.readValue(dir, LandingPageGroup.class);
                 landingPageGroups.add(landingPageGroup);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
