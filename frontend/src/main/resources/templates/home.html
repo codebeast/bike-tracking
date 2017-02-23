@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <title th:text="#{home.title}"></title>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
@@ -16,47 +16,37 @@
     <link type="text/css" rel="stylesheet" href="stylesheets/pricing.css" media="screen"/>
 
 
-    <!--<link th:href="${#httpServletRequest.requestURL.toString()}" rel="canonical"/>-->
+    <link th:href="${#httpServletRequest.requestURL.toString()}" rel="canonical"/>
     <meta name="robots" content="index,follow"/>
     <meta name="description" th:content="#{home.meta.description}"/>
 
 
     <meta property="og:title" th:content="#{home.title}"/>
     <meta property="og:type" content="website"/>
-    <!--<meta property="og:url" th:content="${canonical}"/>-->
+    <meta property="og:url" th:content="${canonical}"/>
     <meta property="og:description" th:content="#{home.meta.description}"/>
 
     <meta name="twitter:card" content="summary"/>
-    <!--<meta name="twitter:url" th:content="${canonical}"/>-->
+    <meta name="twitter:url" th:content="${canonical}"/>
     <meta name="twitter:title" th:content="#{home.title}"/>
     <meta name="twitter:description" th:content="#{home.meta.description}"/>
 
-    <!--<link th:href="${#httpServletRequest.requestURL.toString()}"/>-->
+    <link th:href="${#httpServletRequest.requestURL.toString()}"/>
 
-    <!--<link rel="alternate" th:each="state : ${T(com.javabeast.domain.Language).values()}"-->
-          <!--th:hreflang="${state.displayName}"-->
-          <!--th:href="${#httpServletRequest.requestURL.toString()} + '?lang=' + ${state.displayName}"/>-->
-    <!-- Hotjar Tracking Code for https://bike-tracker.com -->
-    <script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:424991,hjsv:5};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
+    <link rel="alternate" th:each="state : ${T(com.javabeast.domain.Language).values()}"
+          th:hreflang="${state.displayName}"
+          th:href="${#httpServletRequest.requestURL.toString()} + '?lang=' + ${state.displayName}"/>
+
 
 </head>
 <body>
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
 
-    <!--<li th:each="state : ${T(com.javabeast.domain.Language).values()}" th:value="${state}">-->
-        <!--<a th:href="${#httpServletRequest.requestURL.toString()} + '?lang=' + ${state.displayName}"-->
-           <!--th:text="${state.languageName}">Placeholder</a>-->
-    <!--</li>-->
+    <li th:each="state : ${T(com.javabeast.domain.Language).values()}" th:value="${state}">
+        <a th:href="${#httpServletRequest.requestURL.toString()} + '?lang=' + ${state.displayName}"
+           th:text="${state.languageName}">Placeholder</a>
+    </li>
 </ul>
 
 <div class="navbar-fixed">
@@ -98,13 +88,13 @@
                             <p class="black-text flow-text" th:text="#{home.landing.blurb}">Placeholder</p>
 
                             <div class="col s6 m6 l6 left">
-                                <a href="https://materializecss.com/getting-started.html" id="buy-button"
+                                <a href="http://materializecss.com/getting-started.html" id="buy-button"
                                    class="btn-large waves-effect waves-light orange lighten-1"
                                    th:text="#{home.landing.button.pay}">Placeholder</a>
                             </div>
 
                             <div class="col s6 m6 l6 left">
-                                <a href="https://materializecss.com/getting-started.html" id="more-button"
+                                <a href="http://materializecss.com/getting-started.html" id="more-button"
                                    class="btn-large waves-effect waves-light white black-text lighten-1"
                                    th:text="#{home.landing.button.features}">Placeholder</a>
                             </div>
@@ -291,12 +281,14 @@
             <h3>We aim to keep the pricing as simple as possible</h3>
         </div>
 
+        <!-- MATERIALIZE CSS USES 12 COLUMN GRID SYSTEM, DETAILS http://materializecss.com/grid.html -->
         <div class="col s12 m4">
 
             <!-- START PRICING PLAN -->
             <div class="card pricing style-2">
 
                 <!-- START PLAN TITLE DIV. -->
+                <!-- CHANGE COLOR BY CHANGING LAST CSS CLASS (teal) AVAILABLE COLOR CLASSES LISTED HERE http://materializecss.com/color.html -->
                 <div class="plan-title waves-effect waves-block waves-light teal">
                     <h5 class="white-text">
                         <span class="plan">MONTHLY</span>
@@ -509,7 +501,7 @@
     </div>
     <div class="footer-copyright">
         <div class="container">
-            Made by <a class="brown-text text-lighten-3" href="https://materializecss.com">Materialize</a>
+            Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
         </div>
     </div>
 </footer>
@@ -527,23 +519,6 @@
   ga('create', 'UA-92258888-1', 'auto');
   ga('send', 'pageview');
 
-
 </script>
-
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/58ac5e69f90be509fef2371c/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-
-
 </body>
 </html>
