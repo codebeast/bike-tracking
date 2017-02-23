@@ -4,50 +4,40 @@
 <head>
     <title th:text="#{home.title}"></title>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
-
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-
-    <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link href="/stylesheets/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="/stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-
     <link type="text/css" rel="stylesheet" href="stylesheets/pricing.css" media="screen"/>
-
-
+    <link type="text/css" rel="stylesheet" href="stylesheets/flags.min.css" media="screen"/>
     <link th:href="${#httpServletRequest.requestURL.toString()}" rel="canonical"/>
     <meta name="robots" content="index,follow"/>
     <meta name="description" th:content="#{home.meta.description}"/>
-
-
     <meta property="og:title" th:content="#{home.title}"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" th:content="${canonical}"/>
     <meta property="og:description" th:content="#{home.meta.description}"/>
-
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:url" th:content="${canonical}"/>
     <meta name="twitter:title" th:content="#{home.title}"/>
     <meta name="twitter:description" th:content="#{home.meta.description}"/>
-
     <link th:href="${#httpServletRequest.requestURL.toString()}"/>
-
     <link rel="alternate" th:each="state : ${T(com.javabeast.domain.Language).values()}"
           th:hreflang="${state.displayName}"
           th:href="${#httpServletRequest.requestURL.toString()} + '?lang=' + ${state.displayName}"/>
-
 </head>
 <body>
-<!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
-
     <li th:each="state : ${T(com.javabeast.domain.Language).values()}" th:value="${state}">
         <a th:href="${#httpServletRequest.requestURL.toString()} + '?lang=' + ${state.displayName}"
-           th:text="${state.languageName}">Placeholder</a>
+           th:inline="text">
+            <span class="flag" th:classappend="${state.flagClass}" style="float:left; margin-top:-5px;"></span>
+            &nbsp;
+            [[${state.languageName}]]
+        </a>
     </li>
 </ul>
-
 <div class="navbar-fixed">
     <nav class="white" role="navigation">
         <div class="nav-wrapper container">
@@ -57,17 +47,17 @@
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="/checkout">Buy</a></li>
                 <li><a href="/faq">FAQ</a></li>
-
                 <li th:with="lang=${#locale}">
                     <a class="dropdown-button" href="#!" data-activates="dropdown1"
                        th:inline="text">
+                        <span class="flag" th:classappend="${T(com.javabeast.domain.Language).getFlagClassFromCode(lang)}" style="float:left; margin-top:15px;"></span>
+                         &nbsp;
                         [[${T(com.javabeast.domain.Language).getNameFromCode(lang)}]]
                         <i class="material-icons right">arrow_drop_down</i>
                     </a>
                 </li>
                 <li><a href="/login">Login</a></li>
             </ul>
-
             <ul id="nav-mobile" class="side-nav">
                 <li><a href="#">Navbar Link</a></li>
             </ul>
@@ -85,7 +75,6 @@
                             <h4 class="orange-text" th:text="#{home.landing.title}">Placeholder</h4>
                             <h4 class="black-text" th:text="#{home.landing.title2}">Placeholder</h4>
                             <p class="black-text flow-text" th:text="#{home.landing.blurb}">Placeholder</p>
-
                             <div class="col s6 m6 l6 left">
                                 <a href="http://materializecss.com/getting-started.html" id="buy-button"
                                    class="btn-large waves-effect waves-light orange lighten-1"
@@ -519,6 +508,10 @@
 
   ga('create', 'UA-92258888-1', 'auto');
   ga('send', 'pageview');
+
+
+
+
 
 </script>
 </body>
