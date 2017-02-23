@@ -478,12 +478,14 @@
             </div>
 
             <div class="col l3 s12">
-                <h5 class="white-text">Settings</h5>
+                <h5 class="white-text">Tracking</h5>
                 <ul>
-                    <li><a class="white-text" href="#!">Link 1</a></li>
-                    <li><a class="white-text" href="#!">Link 2</a></li>
-                    <li><a class="white-text" href="#!">Link 3</a></li>
-                    <li><a class="white-text" href="#!">Link 4</a></li>
+                    <li th:each="landingPage : ${landingPages}" th:value="${landingPage}">
+                        <a class="white-text"
+                           th:href="${#httpServletRequest.requestURL.toString()} + 'featured/' + ${landingPage.url}"
+                           th:text="${landingPage.display}">Placeholder</a>
+                    </li>
+
                 </ul>
             </div>
 
