@@ -25,6 +25,7 @@ public class LandingPage {
     private String feature1body;
     private String feature2header;
     private String feature2body;
+    private String heroImage;
 
     public String getFullUrl() {
         return "/featured/" + url;

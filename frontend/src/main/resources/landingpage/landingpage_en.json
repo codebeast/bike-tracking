@@ -14,7 +14,8 @@
       "feature1header": "Leeds bike tracking header 1",
       "feature1body": "This is the body of text used for the feature description, this should be unqiue content for the page",
       "feature2header": "Leeds bike tracking header 2",
-      "feature2body": "This is the body of text used for the feature description, this should be unqiue content for the page"
+      "feature2body": "This is the body of text used for the feature description, this should be unqiue content for the page",
+      "heroImage": "/images/landing-min.png"
     },
     {
       "url": "bike_tracking_in_manchester",
@@ -29,7 +30,8 @@
       "feature1header": "Manchester bike tracking header 1",
       "feature1body": "This is the body of text used for the feature description, this should be unqiue content for the page",
       "feature2header": "Manchester bike tracking header 2",
-      "feature2body": "This is the body of text used for the feature description, this should be unqiue content for the page"
+      "feature2body": "This is the body of text used for the feature description, this should be unqiue content for the page",
+      "heroImage": "/images/background2.jpg"
     }
   ]
 }
