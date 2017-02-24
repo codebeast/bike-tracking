@@ -16,86 +16,12 @@
     <meta name="twitter:url" th:content="${canonical}"/>
     <meta name="twitter:title" th:content="#{home.title}"/>
     <meta name="twitter:description" th:content="#{home.meta.description}"/>
-
 </head>
 <body>
-<ul id="dropdown1" class="dropdown-content">
-    <li th:each="state : ${T(com.javabeast.domain.Language).values()}" th:value="${state}">
-        <a th:href="${#httpServletRequest.requestURL.toString()} + '?lang=' + ${state.displayName}"
-           th:inline="text">
-            <span class="flag" th:classappend="${state.flagClass}" style="float:left; margin-top:-5px;"></span>
-            &nbsp;
-            [[${state.languageName}]]
-        </a>
-    </li>
-</ul>
 
-<ul id="dropdown2" class="dropdown-content">
-    <li th:each="state : ${T(com.javabeast.domain.Language).values()}" th:value="${state}">
-        <a th:href="${#httpServletRequest.requestURL.toString()} + '?lang=' + ${state.displayName}"
-           th:inline="text">
-            <span class="flag" th:classappend="${state.flagClass}" style="float:left; margin-top:-5px;"></span>
-            &nbsp;
-            [[${state.languageName}]]
-        </a>
-    </li>
-</ul>
-<div class="navbar-fixed">
-    <nav class="white" role="navigation">
-        <div class="nav-wrapper container">
-            <a id="logo-container" href="/" class="brand-logo hide-on-med-and-down">Bike Tracker</a>
-            <a id="logo-container2" href="/" class="brand-logo hide-on-large-only left">Bike Tracker</a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#features" th:text="#{home.features.button.text}">Placeholder</a></li>
-                <li><a href="#pricing" th:text="#{home.pricing.button.text}">Placeholder</a></li>
-                <li><a href="/checkout" th:text="#{home.buy.button.text}">Placeholder</a></li>
-                <li><a href="/faq" th:text="#{home.faq.button.text}">Placeholder</a></li>
-                <li th:with="lang=${#locale}" style="min-width:170px">
-                    <a class="dropdown-button" href="#!" data-activates="dropdown1"
-                       th:inline="text">
-                        <span class="flag"
-                              th:classappend="${T(com.javabeast.domain.Language).getFlagClassFromCode(lang)}"
-                              style="float:left; margin-top:15px;"></span>
-                        &nbsp;
-                        [[${T(com.javabeast.domain.Language).getNameFromCode(lang)}]]
-                        <i class="material-icons right">arrow_drop_down</i>
-                    </a>
-                </li>
-                <li><a href="/login" th:text="#{home.login.button.text}">Placeholder</a></li>
-            </ul>
-
-            <ul class="right hide-on-large-only">
-                <li th:with="lang=${#locale}" style="min-width:170px">
-                    <a class="dropdown-button" href="#!" data-activates="dropdown2"
-                       th:inline="text">
-                        <span class="flag"
-                              th:classappend="${T(com.javabeast.domain.Language).getFlagClassFromCode(lang)}"
-                              style="float:left; margin-top:15px;"></span>
-                        &nbsp;
-                        [[${T(com.javabeast.domain.Language).getNameFromCode(lang)}]]
-                        <i class="material-icons right">arrow_drop_down</i>
-                    </a>
-                </li>
-            </ul>
-
-        </div>
-    </nav>
-</div>
+<div th:include="fragments/navbar :: navbar" th:remove="tag"></div>
 
 <main>
-    <div class="container hide-on-large-only" style="margin-top:20px">
-        <div class="row black-text">
-            <div class="col s4 m2 offset-m3 center">
-                <a href="#features" class="black-text" style="font-size:1rem" th:text="#{home.features.button.text}">Placeholder</a>
-            </div>
-            <div class="col s4 m2 center">
-                <a href="#pricing" class="black-text" th:text="#{home.pricing.button.text}">Placeholder</a>
-            </div>
-            <div class="col s4 m2 center">
-                <a href="" class="black-text" th:text="#{home.login.button.text}">Placeholder</a>
-            </div>
-        </div>
-    </div>
     <div id="index-banner" class="parallax-container valign-wrapper" style="height:512px">
         <div class="section no-pad-bot">
             <div class="container">
@@ -128,23 +54,8 @@
         <div class="parallax"><img src="/images/landing-min.png" alt="A cool motorbike"/></div>
     </div>
     <div class="divider"></div>
-    <div class="container">
-        <div class="section">
-            <div class="row">
-                <div class="col s12 m6 l6">
-                    <h5 class="orange-text bold center" th:inline="text">
-                        [[#{home.phrase1.highlight}]]
-                        <span class="black-text" th:text="#{home.phrase1.text}">placeholder</span></h5>
-                </div>
-                <div class="col s12 m6 l6">
-                    <h5 class="orange-text bold center" th:inline="text">
-                        [[#{home.phrase2.highlight}]]
-                        <span class="black-text" th:text="#{home.phrase2.text}">placeholder</span></h5>
-                </div>
-            </div>
-        </div>
-    </div>
 
+    <div th:include="fragments/usp :: usp"></div>
 
     <div class="divider"></div>
 
@@ -155,7 +66,6 @@
     <div th:include="fragments/howitworks :: howitworks"></div>
 
     <div class="divider"></div>
-
 
     <div th:include="fragments/features :: features"></div>
 

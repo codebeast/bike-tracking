@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:include="fragments/includes :: includes(false)" th:remove="tag"></div>
+</head>
+
+<div th:include="fragments/navbar :: navbar" th:remove="tag"></div>
+
+<body>
+
+<main>
+    <div class="container">
+        <div class="row">
+            <form class="col s12 center ">
+                <div class="row">
+                    <h1 th:text="${display}"></h1>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div th:include="fragments/usp :: usp"></div>
+
+
+</main>
+
+<div th:include="fragments/footer :: footer"></div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/javascripts/materialize.js"></script>
+<script src="/javascripts/init.js"></script>
+<div class="hiddendiv common"></div>
+</body>
+
+</html>
