@@ -22,7 +22,7 @@
 
 <main>
 
-    <div th:include="fragments/hero :: hero"></div>
+    <div th:include="fragments/hero :: hero(#{home.landing.title},#{home.landing.title2},#{home.landing.blurb},#{home.landing.button.pay},#{home.landing.button.features})"></div>
 
     <div class="divider"></div>
 
