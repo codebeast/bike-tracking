@@ -32,6 +32,22 @@
       "feature2header": "Manchester bike tracking header 2",
       "feature2body": "This is the body of text used for the feature description, this should be unqiue content for the page",
       "heroImage": "/images/background2.jpg"
+    },
+    {
+      "url": "dirt_bike_tracking",
+      "title": "Bike Tracker | Cheapest dirt bike tracking",
+      "metaDescription": "Bike Tracker | Cheapest dirt bike tracking in the UK",
+      "display": "Dirt Bike Tracking",
+      "hero1": "Dirt",
+      "hero2": "Bike Tracking",
+      "heroBlurb": "Hero Blurb goes in here, Dirt bike thefts etc",
+      "buyButton": "£9.99",
+      "moreButton": "More",
+      "feature1header": "Dirt bike tracking header 1",
+      "feature1body": "This is the body of text used for the feature description, this should be unqiue content for the page",
+      "feature2header": "Dirt bike tracking header 2",
+      "feature2body": "This is the body of text used for the feature description, this should be unqiue content for the page",
+      "heroImage": "/images/background2.jpg"
     }
   ]
 }
