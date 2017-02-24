@@ -3,15 +3,33 @@
   "landingPages": [
     {
       "url": "bike_tracking_in_leeds",
-      "title": "Bike Tracker | Cheapest bike tracking in Manchester",
+      "title": "Bike Tracker | Cheapest bike tracking in Leeds",
       "metaDescription": "Bike Tracker | Cheapest bike tracking in Manchester",
       "display": "Bike Tracking In Leeds",
-      "tagLine": "Tag Line should go here"
+      "hero1": "Leeds",
+      "hero2": "Bike Tracking",
+      "heroBlurb": "Hero Blurb goes in here, leeds crime etc",
+      "buyButton": "£9.99",
+      "moreButton": "More",
+      "feature1header": "Leeds bike tracking header 1",
+      "feature1body": "This is the body of text used for the feature description, this should be unqiue content for the page",
+      "feature2header": "Leeds bike tracking header 2",
+      "feature2body": "This is the body of text used for the feature description, this should be unqiue content for the page"
     },
     {
       "url": "bike_tracking_in_manchester",
+      "title": "Bike Tracker | Cheapest bike tracking in Manchester",
+      "metaDescription": "Bike Tracker | Cheapest bike tracking in Manchester",
       "display": "Bike Tracking In Manchester",
-      "tagline": "Tag Line should go here"
+      "hero1": "Manchester",
+      "hero2": "Bike Tracking",
+      "heroBlurb": "Hero Blurb goes in here, Manchester crime etc",
+      "buyButton": "£9.99",
+      "moreButton": "More",
+      "feature1header": "Manchester bike tracking header 1",
+      "feature1body": "This is the body of text used for the feature description, this should be unqiue content for the page",
+      "feature2header": "Manchester bike tracking header 2",
+      "feature2body": "This is the body of text used for the feature description, this should be unqiue content for the page"
     }
   ]
 }
