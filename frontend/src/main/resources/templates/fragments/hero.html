@@ -1,5 +1,35 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <div th:fragment="hero">
+    <div id="index-banner" class="parallax-container valign-wrapper" style="height:512px">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <div class="row valign">
+                    <div class="col s12 m8 l8">
+                        <div class="col l8 m12">
+                            <div class="left">
+                                <h4 class="orange-text" th:text="#{home.landing.title}">Placeholder</h4>
+                                <h4 class="black-text" th:text="#{home.landing.title2}">Placeholder</h4>
+                                <p class="black-text flow-text" th:text="#{home.landing.blurb}">Placeholder</p>
+                                <div class="col s6 m6 l6 left">
+                                    <a href="http://materializecss.com/getting-started.html" id="buy-button"
+                                       class="btn-large waves-effect waves-light orange lighten-1"
+                                       th:text="#{home.landing.button.pay}">Placeholder</a>
+                                </div>
 
+                                <div class="col s6 m6 l6 left">
+                                    <a href="http://materializecss.com/getting-started.html" id="more-button"
+                                       class="btn-large waves-effect waves-light white black-text lighten-1"
+                                       th:text="#{home.landing.button.features}">Placeholder</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br/><br/>
+
+            </div>
+        </div>
+        <div class="parallax"><img src="/images/landing-min.png" alt="A cool motorbike"/></div>
+    </div>
 </div>
 </html>
