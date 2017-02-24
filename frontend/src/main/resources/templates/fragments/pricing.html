@@ -7,18 +7,18 @@
     <div class="container">
         <div class="row">
             <div class="col s12">
-                <h3 th:text="#{pricing.header}">Placeholder</h3>
-                <h3 th:text="#{pricing.tagline}">Placeholder</h3>
+                <h3 class="center" th:text="#{pricing.header}">Placeholder</h3>
+                <h4 class="center" th:text="#{pricing.tagline}">Placeholder</h4>
             </div>
             <div class="col s12 m4">
 
                 <div class="card pricing style-2">
-                    <div class="plan-title waves-effect waves-block waves-light teal">
+                    <div class="plan-title waves-effect waves-block waves-light orange">
                         <h5 class="white-text">
                             <span class="plan" th:text="#{pricing.plan1.heading}">Placeholder</span>
                         </h5>
                     </div>
-                    <div class="price waves-effect waves-block waves-light teal lighten-1">
+                    <div class="price waves-effect waves-block waves-light orange lighten-1">
                         <h4 class="white-text">
                             <span class="currency" th:text="#{pricing.plan1.currency}">£</span>
                             <span class="amount" th:text="#{pricing.plan1.amount}">9.99</span>
@@ -26,22 +26,35 @@
                         </h4>
                     </div>
                     <div class="card-content">
-                        <ul class="collection">
-                            <li data-tooltip="Dedicated support team available 24/7" data-delay="10" data-position="top"
-                                class="collection-item tooltipped"><b>24/7</b> Support <i
-                                    class="mdi-action-info-outline right"></i></li>
-                            <li class="collection-item"><b>1TB</b> Bandwidth</li>
-                            <li data-tooltip="On demand increase anytime with extra fee" data-delay="10"
-                                data-position="top"
-                                class="collection-item tooltipped"><b>10GB</b> Hosting Space <i
-                                    class="mdi-action-info-outline right"></i></li>
-                            <li class="collection-item"><b>1GB</b> Memory</li>
-                            <li class="collection-item"><b>10</b> Free Domain</li>
-                            <li class="collection-item">User Analytics</li>
+                        <ul class="collection center">
+                            <li class="collection-item" th:inline="text">
+                                <b th:text="#{pricing.reason1.bold}">24/7</b>
+                                [[#{pricing.reason1.text}]]
+                            </li>
+                            <li class="collection-item" th:inline="text">
+                                <b th:text="#{pricing.reason2.bold}">24/7</b>
+                                [[#{pricing.reason2.text}]]
+                            </li>
+                            <li class="collection-item" th:inline="text">
+                                <b th:text="#{pricing.reason3.bold}">24/7</b>
+                                [[#{pricing.reason3.text}]]
+                            </li>
+                            <li class="collection-item" th:inline="text">
+                                <b th:text="#{pricing.reason4.bold}">24/7</b>
+                                [[#{pricing.reason4.text}]]
+                            </li>
+                            <li class="collection-item" th:inline="text">
+                                <b th:text="#{pricing.reason5.bold}">24/7</b>
+                                [[#{pricing.reason5.text}]]
+                            </li>
+                            <li class="collection-item" th:inline="text">
+                                <b th:text="#{pricing.reason6.bold}">24/7</b>
+                                [[#{pricing.reason6.text}]]
+                            </li>
                         </ul>
                         <div class="plan-signup-btn">
                             <a id="start-now-starter"
-                               class="btn waves-effect waves-block waves-light no-margin white-text"
+                               class="btn waves-effect waves-block waves-light no-margin white-text orange"
                                href="/checkout?plan=monthly" th:text="#{pricing.plan1.button.text}">Buy Now</a>
                         </div>
                     </div>
@@ -62,35 +75,49 @@
                         </h4>
                     </div>
                     <div class="card-content">
-                        <ul class="collection">
-                            <li data-tooltip="Dedicated support team available 24/7" data-delay="10" data-position="top"
-                                class="collection-item tooltipped"><b>24/7</b> Support <i
-                                    class="mdi-action-info-outline right"></i></li>
-                            <li class="collection-item"><b>3TB</b> Bandwidth</li>
-                            <li data-tooltip="On demand increase anytime with extra fee" data-delay="10"
-                                data-position="top"
-                                class="collection-item tooltipped"><b>50GB</b> Hosting Space <i
-                                    class="mdi-action-info-outline right"></i></li>
-                            <li class="collection-item"><b>8GB</b> Memory</li>
-                            <li class="collection-item"><b>50</b> Free Domain</li>
-                            <li class="collection-item">User Analytics</li>
+                        <ul class="collection center">
+                            <li class="collection-item" th:inline="text">
+                                <b th:text="#{pricing.reason1.bold}">24/7</b>
+                                [[#{pricing.reason1.text}]]
+                            </li>
+                            <li class="collection-item" th:inline="text">
+                                <b th:text="#{pricing.reason2.bold}">24/7</b>
+                                [[#{pricing.reason2.text}]]
+                            </li>
+                            <li class="collection-item" th:inline="text">
+                                <b th:text="#{pricing.reason3.bold}">24/7</b>
+                                [[#{pricing.reason3.text}]]
+                            </li>
+                            <li class="collection-item" th:inline="text">
+                                <b th:text="#{pricing.reason4.bold}">24/7</b>
+                                [[#{pricing.reason4.text}]]
+                            </li>
+                            <li class="collection-item" th:inline="text">
+                                <b th:text="#{pricing.reason5.bold}">24/7</b>
+                                [[#{pricing.reason5.text}]]
+                            </li>
+                            <li class="collection-item" th:inline="text">
+                                <b th:text="#{pricing.reason6.bold}">24/7</b>
+                                [[#{pricing.reason6.text}]]
+                            </li>
                         </ul>
                         <div class="plan-signup-btn">
                             <a id="start-now-plus"
                                class="btn-large waves-effect waves-block waves-light no-margin white-text yellow darken-2"
-                               href="/checkout?plan=annual1"><span class="dark-grey-text" th:text="#{pricing.plan2.button.text}">Placeholder</span></a>
+                               href="/checkout?plan=annual1"><span class="dark-grey-text"
+                                                                   th:text="#{pricing.plan2.button.text}">Placeholder</span></a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col s12 m4">
                 <div class="card pricing style-2">
-                    <div class="plan-title waves-effect waves-block waves-light teal">
+                    <div class="plan-title waves-effect waves-block waves-light orange">
                         <h5 class="white-text">
                             <span class="plan" th:text="#{pricing.plan3.heading}">Placeholder</span>
                         </h5>
                     </div>
-                    <div class="price waves-effect waves-block waves-light teal lighten-1">
+                    <div class="price waves-effect waves-block waves-light orange lighten-1">
                         <h4 class="white-text">
                             <span class="currency" th:text="#{pricing.plan3.currency}">£</span>
                             <span class="amount" th:text="#{pricing.plan3.amount}">9.99</span>
@@ -98,22 +125,35 @@
                         </h4>
                     </div>
                     <div class="card-content">
-                        <ul class="collection">
-                            <li data-tooltip="Dedicated support team available 24/7" data-delay="10" data-position="top"
-                                class="collection-item tooltipped"><b>24/7</b> Support<i
-                                    class="mdi-action-info-outline right"></i></li>
-                            <li class="collection-item"><b>5TB</b> Bandwidth</li>
-                            <li data-tooltip="On demand increase anytime with extra fee" data-delay="10"
-                                data-position="top"
-                                class="collection-item tooltipped"><b>100GB</b> Hosting Space <i
-                                    class="mdi-action-info-outline right"></i></li>
-                            <li class="collection-item"><b>16GB</b> Memory</li>
-                            <li class="collection-item"><b>100</b> Free Domain</li>
-                            <li class="collection-item">User Analytics</li>
+                        <ul class="collection center">
+                            <li class="collection-item" th:inline="text">
+                                <b th:text="#{pricing.reason1.bold}">24/7</b>
+                                [[#{pricing.reason1.text}]]
+                            </li>
+                            <li class="collection-item" th:inline="text">
+                                <b th:text="#{pricing.reason2.bold}">24/7</b>
+                                [[#{pricing.reason2.text}]]
+                            </li>
+                            <li class="collection-item" th:inline="text">
+                                <b th:text="#{pricing.reason3.bold}">24/7</b>
+                                [[#{pricing.reason3.text}]]
+                            </li>
+                            <li class="collection-item" th:inline="text">
+                                <b th:text="#{pricing.reason4.bold}">24/7</b>
+                                [[#{pricing.reason4.text}]]
+                            </li>
+                            <li class="collection-item" th:inline="text">
+                                <b th:text="#{pricing.reason5.bold}">24/7</b>
+                                [[#{pricing.reason5.text}]]
+                            </li>
+                            <li class="collection-item" th:inline="text">
+                                <b th:text="#{pricing.reason6.bold}">24/7</b>
+                                [[#{pricing.reason6.text}]]
+                            </li>
                         </ul>
                         <div class="plan-signup-btn">
                             <a id="start-now-premium"
-                               class="btn waves-effect waves-block waves-light no-margin white-text"
+                               class="btn waves-effect waves-block waves-light no-margin white-text orange"
                                href="/checkout?plan=annual2" th:text="#{pricing.plan3.button.text}">Placeholder</a>
                         </div>
                     </div>
