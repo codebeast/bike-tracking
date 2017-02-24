@@ -12,58 +12,28 @@
                         <div class="col s12 m12 l8">
                             <div class="col s12 left"><h5>Features</h5></div>
                             <div class="col l6">
-                                <div class="card blue-grey darken-1">
-                                    <div class="card-content white-text">
-                                        <span class="card-title">Feature 1</span>
-                                        <p>I am a very simple card. I am good at containing small bits of information.
-                                            I am convenient because I require little markup to use effectively.</p>
-                                    </div>
-                                </div>
+                                <div th:include="fragments/infocard :: infocard(#{feature.title1},#{feature.body1})"
+                                     th:remove="tag"></div>
                             </div>
                             <div class="col l6">
-                                <div class="card blue-grey darken-1">
-                                    <div class="card-content white-text">
-                                        <span class="card-title">Feature 1</span>
-                                        <p>I am a very simple card. I am good at containing small bits of information.
-                                            I am convenient because I require little markup to use effectively.</p>
-                                    </div>
-                                </div>
+                                <div th:include="fragments/infocard :: infocard(#{feature.title2},#{feature.body2})"
+                                     th:remove="tag"></div>
                             </div>
                             <div class="col l6">
-                                <div class="card blue-grey darken-1">
-                                    <div class="card-content white-text">
-                                        <span class="card-title">Feature 1</span>
-                                        <p>I am a very simple card. I am good at containing small bits of information.
-                                            I am convenient because I require little markup to use effectively.</p>
-                                    </div>
-                                </div>
+                                <div th:include="fragments/infocard :: infocard(#{feature.title3},#{feature.body3})"
+                                     th:remove="tag"></div>
                             </div>
                             <div class="col l6">
-                                <div class="card blue-grey darken-1">
-                                    <div class="card-content white-text">
-                                        <span class="card-title">Feature 1</span>
-                                        <p>I am a very simple card. I am good at containing small bits of information.
-                                            I am convenient because I require little markup to use effectively.</p>
-                                    </div>
-                                </div>
+                                <div th:include="fragments/infocard :: infocard(#{feature.title4},#{feature.body4})"
+                                     th:remove="tag"></div>
                             </div>
                             <div class="col l6">
-                                <div class="card blue-grey darken-1">
-                                    <div class="card-content white-text">
-                                        <span class="card-title">Feature 1</span>
-                                        <p>I am a very simple card. I am good at containing small bits of information.
-                                            I am convenient because I require little markup to use effectively.</p>
-                                    </div>
-                                </div>
+                                <div th:include="fragments/infocard :: infocard(#{feature.title5},#{feature.body5})"
+                                     th:remove="tag"></div>
                             </div>
                             <div class="col l6">
-                                <div class="card blue-grey darken-1">
-                                    <div class="card-content white-text">
-                                        <span class="card-title">Feature 1</span>
-                                        <p>I am a very simple card. I am good at containing small bits of information.
-                                            I am convenient because I require little markup to use effectively.</p>
-                                    </div>
-                                </div>
+                                <div th:include="fragments/infocard :: infocard(#{feature.title6},#{feature.body6})"
+                                     th:remove="tag"></div>
                             </div>
                         </div>
                         <div class="col s12 m12 l4">
