@@ -3,11 +3,15 @@
   "landingPages": [
     {
       "url": "bike_tracking_in_leeds",
-      "display": "Bike Tracking In Leeds"
+      "title": "Bike Tracker | Cheapest bike tracking in Manchester",
+      "metaDescription": "Bike Tracker | Cheapest bike tracking in Manchester",
+      "display": "Bike Tracking In Leeds",
+      "tagLine": "Tag Line should go here"
     },
     {
       "url": "bike_tracking_in_manchester",
-      "display": "Bike Tracking In Manchester"
+      "display": "Bike Tracking In Manchester",
+      "tagline": "Tag Line should go here"
     }
   ]
 }

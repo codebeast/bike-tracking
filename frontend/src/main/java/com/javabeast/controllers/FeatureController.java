@@ -35,7 +35,7 @@ public class FeatureController {
         final List<LandingPage> landingPages = featurePageService.getLandingPagesForLang(locale.getLanguage());
         final LandingPage landingPage = featurePageService.getLandingPage(pageName);
         final Map<String, Object> model = new HashMap<>();
-        model.put("display", landingPage.getDisplay());
+        model.put("page", landingPage);
         model.put("landingPages", landingPages);
         return new ModelAndView(PAGE_NAME, model);
     }
