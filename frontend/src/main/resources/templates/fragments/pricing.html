@@ -11,17 +11,18 @@
                 <h3 th:text="#{pricing.tagline}">Placeholder</h3>
             </div>
             <div class="col s12 m4">
+
                 <div class="card pricing style-2">
                     <div class="plan-title waves-effect waves-block waves-light teal">
                         <h5 class="white-text">
-                            <span class="plan">MONTHLY</span>
+                            <span class="plan" th:text="#{pricing.plan1.heading}">Placeholder</span>
                         </h5>
                     </div>
                     <div class="price waves-effect waves-block waves-light teal lighten-1">
                         <h4 class="white-text">
-                            <span class="currency">£</span>
-                            <span class="amount">9.99</span>
-                            <span class="period">/mo</span>
+                            <span class="currency" th:text="#{pricing.plan1.currency}">£</span>
+                            <span class="amount" th:text="#{pricing.plan1.amount}">9.99</span>
+                            <span class="period" th:text="#{pricing.plan1.period}">/mo</span>
                         </h4>
                     </div>
                     <div class="card-content">
@@ -41,7 +42,7 @@
                         <div class="plan-signup-btn">
                             <a id="start-now-starter"
                                class="btn waves-effect waves-block waves-light no-margin white-text"
-                               href="/checkout?plan=monthly">Buy Now</a>
+                               href="/checkout?plan=monthly" th:text="#{pricing.plan1.button.text}">Buy Now</a>
                         </div>
                     </div>
                 </div>
@@ -50,14 +51,14 @@
                 <div class="card pricing style-2 z-depth-4">
                     <div class="plan-title waves-effect waves-block waves-light yellow darken-3">
                         <h5 class="dark-grey-text">
-                            <span class="plan">1 YEAR</span>
+                            <span class="plan" th:text="#{pricing.plan2.heading}">Placeholder</span>
                         </h5>
                     </div>
                     <div class="price waves-effect waves-block waves-light yellow darken-2">
                         <h4 class="dark-grey-text">
-                            <span class="currency">£</span>
-                            <span class="amount">99</span>
-                            <span class="period">/yr</span>
+                            <span class="currency" th:text="#{pricing.plan2.currency}">£</span>
+                            <span class="amount" th:text="#{pricing.plan2.amount}">9.99</span>
+                            <span class="period" th:text="#{pricing.plan2.period}">/mo</span>
                         </h4>
                     </div>
                     <div class="card-content">
@@ -77,7 +78,7 @@
                         <div class="plan-signup-btn">
                             <a id="start-now-plus"
                                class="btn-large waves-effect waves-block waves-light no-margin white-text yellow darken-2"
-                               href="/checkout?plan=annual1"><span class="dark-grey-text">Buy Now</span></a>
+                               href="/checkout?plan=annual1"><span class="dark-grey-text" th:text="pricing.plan2.button.text}">Placeholder</span></a>
                         </div>
                     </div>
                 </div>
@@ -86,14 +87,14 @@
                 <div class="card pricing style-2">
                     <div class="plan-title waves-effect waves-block waves-light teal">
                         <h5 class="white-text">
-                            <span class="plan">3 YEAR</span>
+                            <span class="plan" th:text="#{pricing.plan3.heading}">Placeholder</span>
                         </h5>
                     </div>
                     <div class="price waves-effect waves-block waves-light teal lighten-1">
                         <h4 class="white-text">
-                            <span class="currency">£</span>
-                            <span class="amount">269</span>
-                            <span class="period">/3yrs</span>
+                            <span class="currency" th:text="#{pricing.plan3.currency}">£</span>
+                            <span class="amount" th:text="#{pricing.plan3.amount}">9.99</span>
+                            <span class="period" th:text="#{pricing.plan3.period}">/mo</span>
                         </h4>
                     </div>
                     <div class="card-content">
@@ -113,7 +114,7 @@
                         <div class="plan-signup-btn">
                             <a id="start-now-premium"
                                class="btn waves-effect waves-block waves-light no-margin white-text"
-                               href="/checkout?plan=annual2">Buy Now</a>
+                               href="/checkout?plan=annual2" th:text="pricing.plan3.button.text}">Placeholder</a>
                         </div>
                     </div>
                 </div>
