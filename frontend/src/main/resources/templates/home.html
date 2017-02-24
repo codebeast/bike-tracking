@@ -5,7 +5,7 @@
     <title th:text="#{home.title}"></title>
 
 
-    <div th:include="fragments/includes :: includes" th:remove="tag"></div>
+    <div th:include="fragments/includes :: includes(true)" th:remove="tag"></div>
 
     <meta name="description" th:content="#{home.meta.description}"/>
     <meta property="og:title" th:content="#{home.title}"/>
