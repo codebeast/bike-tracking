@@ -16,7 +16,7 @@
                     <ul>
                         <li th:each="landingPage : ${landingPages}" th:value="${landingPage}">
                             <a class="white-text"
-                               th:href="${#httpServletRequest.requestURL.toString()} + 'featured/' + ${landingPage.url}"
+                               th:href="${landingPage.fullUrl}"
                                th:text="${landingPage.display}">Placeholder</a>
                         </li>
 

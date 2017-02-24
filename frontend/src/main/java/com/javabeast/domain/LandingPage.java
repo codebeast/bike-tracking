@@ -12,4 +12,8 @@ import lombok.NoArgsConstructor;
 public class LandingPage {
     private String url;
     private String display;
+
+    public String getFullUrl() {
+        return "/featured/" + url;
+    }
 }
