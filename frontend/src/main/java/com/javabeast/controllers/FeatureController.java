@@ -20,7 +20,7 @@ import java.util.Map;
 @RequestMapping("")
 public class FeatureController {
 
-    private static final String PAGE_NAME = "landingPage";
+    private static final String PAGE_NAME = "landingpage";
 
     private final FeaturePageService featurePageService;
 
