@@ -9,3 +9,5 @@ buildNumber.properties
 .mvn/timing.properties
 /parser-variables.env
 /frontend-variables.env
+/parent.iml
+/.idea/
