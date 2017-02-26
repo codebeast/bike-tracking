@@ -2,8 +2,8 @@
 <div th:fragment="infocard(cardTitle, cardBody)">
     <div class="card orange lighten-2">
         <div class="card-content black-text">
-            <span class="card-title center" th:text="${cardTitle}">Card Title</span>
-            <p class="center" th:text="${cardBody}">Card Body</p>
+            <span class="card-title center" th:utext="${cardTitle}">Card Title</span>
+            <p class="center" th:utext="${cardBody}">Card Body</p>
         </div>
     </div>
 </div>
