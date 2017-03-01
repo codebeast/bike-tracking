@@ -76,23 +76,9 @@ var entrypoint = function () {
         $scope.markers = {};
         $scope.carData = {};
 
-        $http({
-            method: 'GET',
-            url: '/whereisfogie/location'
-        }).then(function successCallback(response) {
-            var cars = response.data;
-            updateMarkers(cars);
-            setCarData(cars);
-        }, function errorCallback(response) {
-            console.log(response);
-            updateMarkers(fogie);
-            setCarData(fogie);
-        });
-
         function setCarData(carData) {
             $scope.carData = carData;
         }
-
 
         function updateMarkers(car) {
             $scope.markers = {};
@@ -126,6 +112,26 @@ var entrypoint = function () {
         });
         updateMarkers(fogie);
         setCarData(fogie);
+
+        setTimeout(updateUi, 100);
+        function updateUi() {
+            console.log("get driver details");
+           $http({
+                    method: 'GET',
+                    url: '/whereisfogie/location'
+                }).then(function successCallback(response) {
+                    var cars = response.data;
+                    updateMarkers(cars);
+                    setCarData(cars);
+                }, function errorCallback(response) {
+                    console.log(response);
+                    updateMarkers(fogie);
+                    setCarData(fogie);
+                });
+                setTimeout(updateUi, 60000);
+        }
+
+
     });
     MapController.$inject = ["$scope", "$http"];
 
