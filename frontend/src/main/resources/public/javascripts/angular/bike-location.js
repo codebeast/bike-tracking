@@ -29,8 +29,6 @@ var entrypoint = function () {
                 iconSize: [20, 20]
             }
         };
-
-
         //mock data
         var fogie = {
         "trackerMessageId":1475,
@@ -61,6 +59,18 @@ var entrypoint = function () {
                 {"ioEventId":5537,"type":240,"value":0},
                 {"ioEventId":5538,"type":66,"value":12669}
             ]
+        }
+
+        $scope.getCarState = function() {
+            var ioEvents = $scope.carData.ioEvents;
+            var movementState = 0;
+            for (var iter in ioEvents){
+                var ioEvent = ioEvents[iter];
+                if (ioEvent.type == 240) {
+                    movementState = ioEvent.value;
+                }
+            }
+            return movementState == 1 ? "In Transit" : "Stationary";
         }
 
         $scope.markers = {};
@@ -99,7 +109,6 @@ var entrypoint = function () {
              $scope.ukCenter.lng = car.gpsElement.longitude;
              $scope.ukCenter.zoom = 16;
         }
-
 
         angular.extend($scope, {
             ukCenter: {
