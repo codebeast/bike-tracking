@@ -21,8 +21,8 @@ var entrypoint = function () {
         console.log("create directive");
         return {
             controller: "MapController",
-            template: "<style> .mapContainer {height: 512px; width: 100%;}</style> <div>{{carData}}</div> <div class='mapContainer' style='z-index: 1'><leaflet width='100%' height='512px' markers='markers' center='ukCenter' defaults='defaults'></leaflet></div>"
-        };
+            templateUrl: "/fragments/bikelocation.html"
+            };
     });
 
 
@@ -48,6 +48,39 @@ var entrypoint = function () {
             }
         };
 
+
+        //mock data
+        var fogie = {
+        "trackerMessageId":1475,
+        "imei":"357454071854283",
+        "timestamp":1488308177000,
+        "gpsElement":{
+            "gpsElementId":1475,
+            "latitude":53.804805,
+            "longitude":-1.5440366,
+            "altitude":0,
+            "angle":0,
+            "satellites":0,
+            "speed":0,
+            "geocodedLocation":{
+                "id":1298,
+                "street":"Inner Ring Road",
+                "postalCode":"LS2 8BQ",
+                "adminArea5":"Leeds",
+                "adminArea4":"",
+                "adminArea3":"England",
+                "adminArea2":null,
+                "adminArea1":"GB"
+                },
+            "latLngString":"53.804805,-1.5440366"
+            },
+            "ioEvents":[
+                {"ioEventId":5536,"type":1,"value":0},
+                {"ioEventId":5537,"type":240,"value":0},
+                {"ioEventId":5538,"type":66,"value":12669}
+            ]
+        }
+
         $scope.markers = {};
         $scope.carData = {};
 
@@ -60,11 +93,14 @@ var entrypoint = function () {
             setCarData(cars);
         }, function errorCallback(response) {
             console.log(response);
+            updateMarkers(fogie);
+            setCarData(fogie);
         });
 
         function setCarData(carData) {
             $scope.carData = carData;
         }
+
 
         function updateMarkers(car) {
             $scope.markers = {};
@@ -82,6 +118,7 @@ var entrypoint = function () {
              $scope.ukCenter.zoom = 16;
         }
 
+
         angular.extend($scope, {
             ukCenter: {
                 lat: 53.490395,
@@ -96,6 +133,8 @@ var entrypoint = function () {
                 zoomControl:false
             }
         });
+        updateMarkers(fogie);
+        setCarData(fogie);
     });
     mapController.$inject = ["$scope", "$http"];
 
