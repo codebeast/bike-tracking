@@ -16,6 +16,9 @@ public class DeviceController {
     @GetMapping("device/{imei}")
     public ModelAndView getAngularFragment(@PathVariable final String imei, final HttpServletRequest httpServletRequest) {
         final Map<String, Object> model = new HashMap<>();
+        model.put("imei", imei);
+        //todo this should fetch the data for the imei on the device
+        //only load devices allowed for this user etc
         return new ModelAndView(PAGE_NAME, model);
     }
 }
