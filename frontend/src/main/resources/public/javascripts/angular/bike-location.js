@@ -73,6 +73,20 @@ var entrypoint = function () {
             return movementState == 1 ? "In Transit" : "Stationary";
         }
 
+        $scope.getCarAddress = function() {
+             var geocodedLocation = $scope.carData.gpsElement.geocodedLocation;
+             var address = "";
+             var components = ['street', 'adminArea5', 'adminArea4', 'adminArea3', 'adminArea2', 'postalCode'];
+             for (var index in components) {
+                var value = geocodedLocation[components[index]];
+                console.log(value);
+                if (value) {
+                address += value + " ";
+                }
+             }
+             return address;
+        }
+
         $scope.markers = {};
         $scope.carData = {};
 
