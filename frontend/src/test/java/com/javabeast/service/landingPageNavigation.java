@@ -243,4 +243,16 @@ public class landingPageNavigation {
         Assert.assertEquals(currentUrl, URL +="?lang=sv");
         driver.quit();
     }
+
+    // terms and conditions
+    @Test
+    public void termsNavigation() throws InterruptedException {
+        getHome();
+        driver.findElement(By.xpath("//html/body/div[3]/footer/div[2]/div/a[2]")).click();
+        Thread.sleep(1000);
+        String currentUrl = driver.getCurrentUrl();
+        Assert.assertEquals(currentUrl, URL +="terms");
+        driver.quit();
+    }
+
 }
