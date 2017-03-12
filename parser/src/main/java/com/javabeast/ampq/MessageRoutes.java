@@ -1,6 +1,7 @@
 package com.javabeast.ampq;
 
 
+import com.javabeast.TextMessage;
 import com.javabeast.TrackerMessage;
 import com.javabeast.processors.*;
 import com.javabeast.teltonikia.TeltonikaMessage;
@@ -43,11 +44,13 @@ public class MessageRoutes {
     @Autowired
     private TrackerMessageService trackerMessageService;
 
+    @Autowired
+    private MessageService messageService;
+
 
     @RabbitListener(queues = "unprocessed")
     public void unprocessedQueue(TeltonikaMessage teltonikaMessage, Channel channel,
                                  @Header(AmqpHeaders.DELIVERY_TAG) long tag) throws IOException {
-        //System.out.println("MessageRoutes.unprocessedQueue");
         messageParser.addToQueue(teltonikaMessage);
         channel.basicAck(tag, true);
     }
@@ -69,7 +72,6 @@ public class MessageRoutes {
             key = "orderRoutingKey"))
     public void reverseGeocode(TrackerMessage message, Channel channel,
                                @Header(AmqpHeaders.DELIVERY_TAG) long tag) throws IOException {
-        //   System.out.println("MessageRoutes.reverseGeocode");
         final boolean shouldAck = geocoder.reverseGeocode(message);
         channel.basicAck(tag, shouldAck);
         if (shouldAck) {
@@ -85,8 +87,6 @@ public class MessageRoutes {
             key = "orderRoutingKey"))
     public void ioevents(TrackerMessage message, Channel channel,
                          @Header(AmqpHeaders.DELIVERY_TAG) long tag) throws IOException {
-        // System.out.println("MessageRoutes.ioevents");
-
         ioEvents.processEvents(message);
 
         clientEventService.addToQueue(ClientEvent.builder()
@@ -96,18 +96,25 @@ public class MessageRoutes {
         channel.basicAck(tag, true);
     }
 
+    @RabbitListener(bindings = @QueueBinding(value = @Queue(value = "textmessage", durable = "true"),
+            exchange = @Exchange(value = "spring-boot-exchange", ignoreDeclarationExceptions = "true", type = "topic", durable = "true"),
+            key = "orderRoutingKey"))
+    public void textMessages(TextMessage message, Channel channel,
+                             @Header(AmqpHeaders.DELIVERY_TAG) long tag) throws IOException {
+        messageService.processEvents(message);
+        channel.basicAck(tag, true);
+    }
+
 
     @RabbitListener(bindings = @QueueBinding(value = @Queue(value = "client.updates", durable = "true"),
             exchange = @Exchange(value = "spring-boot-exchange", ignoreDeclarationExceptions = "true", type = "topic", durable = "true"),
             key = "orderRoutingKey"))
     public void clientUpdates(ClientEvent clientEvent, Channel channel,
                               @Header(AmqpHeaders.DELIVERY_TAG) long tag) throws IOException {
-        //System.out.println("client.event");
     }
 
 
     private void pushToRoutes(final TrackerMessage message) {
-        //  System.out.println("MessageRoutes.pushToRoutes");
         geocoder.addToQueue(message);
         ioEvents.addToQueue(message);
     }

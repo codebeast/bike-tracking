@@ -1,4 +1,4 @@
 #!/bin/bash
-docker kill mongo
-docker rm mongo
-docker run -d -p27017:27017 --name mongo -d mongo
+docker kill handsoff_database
+docker rm handsoff_database
+docker run -d -p5432:5432 --name handsoff_database handsoff/database
