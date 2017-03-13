@@ -13,7 +13,8 @@
 
     <ul id="dropdown2" class="dropdown-content">
         <li th:each="state : ${T(com.javabeast.domain.Language).values()}" th:value="${state}">
-            <a th:href="${#httpServletRequest.requestURL.toString()} + '?lang=' + ${state.displayName}"
+            <a th:href="${#httpServletRequest.
+            requestURL.toString()} + '?lang=' + ${state.displayName}"
                th:inline="text">
                 <span class="flag" th:classappend="${state.flagClass}" style="float:left; margin-top:-5px;"></span>
                 &nbsp;

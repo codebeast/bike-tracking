@@ -18,6 +18,7 @@ public class landingPageNavigation {
     private void getHome() throws InterruptedException {
         driver.get(URL);
         Thread.sleep(1000);
+        driver.manage().window().maximize();
     }
 
     // faq navigation - top nav bar
@@ -26,7 +27,7 @@ public class landingPageNavigation {
         getHome();
         driver.findElement(By.linkText("FAQ")).click();
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl, URL +="faq");
+        Assert.assertEquals(currentUrl, URL += "faq");
         driver.quit();
     }
 
@@ -36,7 +37,7 @@ public class landingPageNavigation {
         getHome();
         driver.findElement(By.linkText("Features")).click();
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl, URL +="#features");
+        Assert.assertEquals(currentUrl, URL += "#features");
         driver.quit();
     }
 
@@ -46,7 +47,7 @@ public class landingPageNavigation {
         getHome();
         driver.findElement(By.linkText("Pricing")).click();
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl, URL +="#pricing");
+        Assert.assertEquals(currentUrl, URL += "#pricing");
         driver.quit();
     }
 
@@ -56,7 +57,7 @@ public class landingPageNavigation {
         getHome();
         driver.findElement(By.linkText("Buy")).click();
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl, URL +="checkout");
+        Assert.assertEquals(currentUrl, URL += "checkout");
         driver.quit();
     }
 
@@ -66,7 +67,7 @@ public class landingPageNavigation {
         getHome();
         driver.findElement(By.linkText("Login")).click();
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl, URL +="login");
+        Assert.assertEquals(currentUrl, URL += "login");
         driver.quit();
     }
 
@@ -76,7 +77,7 @@ public class landingPageNavigation {
         getHome();
         driver.findElement(By.xpath("//*[@id=\"start-now-starter\"]")).click();
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl, URL +="checkout?plan=monthly");
+        Assert.assertEquals(currentUrl, URL += "checkout?plan=monthly");
         driver.quit();
     }
 
@@ -86,7 +87,7 @@ public class landingPageNavigation {
         getHome();
         driver.findElement(By.xpath("//*[@id=\"start-now-plus\"]")).click();
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl, URL +="checkout?plan=annual1");
+        Assert.assertEquals(currentUrl, URL += "checkout?plan=annual1");
         driver.quit();
     }
 
@@ -96,7 +97,7 @@ public class landingPageNavigation {
         getHome();
         driver.findElement(By.xpath("//*[@id=\"start-now-premium\"]")).click();
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl, URL +="checkout?plan=annual2");
+        Assert.assertEquals(currentUrl, URL += "checkout?plan=annual2");
         driver.quit();
     }
 
@@ -108,7 +109,7 @@ public class landingPageNavigation {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"dropdown1\"]/li[1]")).click();
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl, URL +="?lang=en");
+        Assert.assertEquals(currentUrl, URL += "?lang=en");
         driver.quit();
     }
 
@@ -120,7 +121,7 @@ public class landingPageNavigation {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"dropdown1\"]/li[2]")).click();
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl, URL +="?lang=de");
+        Assert.assertEquals(currentUrl, URL += "?lang=de");
         driver.quit();
     }
 
@@ -132,7 +133,7 @@ public class landingPageNavigation {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"dropdown1\"]/li[3]")).click();
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl, URL +="?lang=es");
+        Assert.assertEquals(currentUrl, URL += "?lang=es");
         driver.quit();
     }
 
@@ -144,7 +145,7 @@ public class landingPageNavigation {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"dropdown1\"]/li[4]")).click();
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl, URL +="?lang=it");
+        Assert.assertEquals(currentUrl, URL += "?lang=it");
         driver.quit();
     }
 
@@ -156,7 +157,7 @@ public class landingPageNavigation {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"dropdown1\"]/li[5]")).click();
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl, URL +="?lang=nl");
+        Assert.assertEquals(currentUrl, URL += "?lang=nl");
         driver.quit();
     }
 
@@ -168,7 +169,7 @@ public class landingPageNavigation {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"dropdown1\"]/li[6]")).click();
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl, URL +="?lang=pl");
+        Assert.assertEquals(currentUrl, URL += "?lang=pl");
         driver.quit();
     }
 
@@ -180,7 +181,7 @@ public class landingPageNavigation {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"dropdown1\"]/li[7]")).click();
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl, URL +="?lang=pt");
+        Assert.assertEquals(currentUrl, URL += "?lang=pt");
         driver.quit();
     }
 
@@ -192,7 +193,7 @@ public class landingPageNavigation {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"dropdown1\"]/li[8]")).click();
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl, URL +="?lang=da");
+        Assert.assertEquals(currentUrl, URL += "?lang=da");
         driver.quit();
     }
 
@@ -204,7 +205,7 @@ public class landingPageNavigation {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"dropdown1\"]/li[9]")).click();
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl, URL +="?lang=ru");
+        Assert.assertEquals(currentUrl, URL += "?lang=ru");
         driver.quit();
     }
 
@@ -216,7 +217,7 @@ public class landingPageNavigation {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"dropdown1\"]/li[10]")).click();
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl, URL +="?lang=uk");
+        Assert.assertEquals(currentUrl, URL += "?lang=uk");
         driver.quit();
     }
 
@@ -228,7 +229,7 @@ public class landingPageNavigation {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"dropdown1\"]/li[11]")).click();
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl, URL +="?lang=no");
+        Assert.assertEquals(currentUrl, URL += "?lang=no");
         driver.quit();
     }
 
@@ -240,7 +241,7 @@ public class landingPageNavigation {
         Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"dropdown1\"]/li[12]")).click();
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl, URL +="?lang=sv");
+        Assert.assertEquals(currentUrl, URL += "?lang=sv");
         driver.quit();
     }
 
@@ -251,7 +252,46 @@ public class landingPageNavigation {
         driver.findElement(By.xpath("//html/body/div[3]/footer/div[2]/div/a[2]")).click();
         Thread.sleep(1000);
         String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl, URL +="terms");
+        Assert.assertEquals(currentUrl, URL += "terms");
+        driver.quit();
+    }
+
+    // login navigation
+    @Test
+    public void loginNav() throws InterruptedException {
+        getHome();
+        driver.findElement(By.xpath("/html/body/div[1]/nav/div/ul[1]/li[6]/a")).click();
+        Thread.sleep(1000);
+        String currentUrl = driver.getCurrentUrl();
+        Assert.assertEquals(currentUrl, URL += "login");
+        driver.quit();
+    }
+
+    // login using the login page
+    @Test
+    public void loginLogin() throws InterruptedException {
+        getHome();
+        driver.findElement(By.xpath("/html/body/div[1]/nav/div/ul[1]/li[6]/a")).click();
+        Thread.sleep(1000);
+        String currentUrl = driver.getCurrentUrl();
+        driver.findElement(By.xpath("/html/body/form/div[1]/label/input")).sendKeys("user");
+        driver.findElement(By.xpath("/html/body/form/div[2]/label/input")).sendKeys("password");
+        driver.findElement(By.xpath("/html/body/form/div[3]/input")).submit();
+        Assert.assertEquals(URL += "dashboard", currentUrl);
+        driver.quit();
+    }
+
+    // login using the login page with incorrect credentials
+    @Test
+    public void loginLoginError() throws InterruptedException {
+        getHome();
+        driver.findElement(By.xpath("/html/body/div[1]/nav/div/ul[1]/li[6]/a")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/form/div[1]/label/input")).sendKeys("incorrect");
+        driver.findElement(By.xpath("/html/body/form/div[2]/label/input")).sendKeys("credentials");
+        driver.findElement(By.xpath("/html/body/form/div[3]/input")).submit();
+        String currentUrl = driver.getCurrentUrl();
+        Assert.assertEquals(currentUrl, URL += "login?error");
         driver.quit();
     }
 
