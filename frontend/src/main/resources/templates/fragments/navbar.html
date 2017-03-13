@@ -1,5 +1,5 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
-<div th:fragment="navbar">
+<div th:fragment="navbar(showOptions)">
     <ul id="dropdown1" class="dropdown-content">
         <li th:each="state : ${T(com.javabeast.domain.Language).values()}" th:value="${state}">
             <a th:href="${#httpServletRequest.requestURL.toString()} + '?lang=' + ${state.displayName}"
@@ -64,16 +64,19 @@
     </div>
 
 
-    <div class="container hide-on-large-only" style="margin-top:20px">
-        <div class="row black-text">
-            <div class="col s4 m2 offset-m3 center">
-                <a href="#features" class="black-text" style="font-size:1rem" th:text="#{home.features.button.text}">Placeholder</a>
-            </div>
-            <div class="col s4 m2 center">
-                <a href="#pricing" class="black-text" th:text="#{home.pricing.button.text}">Placeholder</a>
-            </div>
-            <div class="col s4 m2 center">
-                <a href="" class="black-text" th:text="#{home.login.button.text}">Placeholder</a>
+    <div th:if="${showOptions}" th:remove="tag">
+        <div class="container hide-on-large-only" style="margin-top:20px">
+            <div class="row black-text">
+                <div class="col s4 m2 offset-m3 center">
+                    <a href="#features" class="black-text" style="font-size:1rem"
+                       th:text="#{home.features.button.text}">Placeholder</a>
+                </div>
+                <div class="col s4 m2 center">
+                    <a href="#pricing" class="black-text" th:text="#{home.pricing.button.text}">Placeholder</a>
+                </div>
+                <div class="col s4 m2 center">
+                    <a href="" class="black-text" th:text="#{home.login.button.text}">Placeholder</a>
+                </div>
             </div>
         </div>
     </div>
