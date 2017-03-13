@@ -117,11 +117,11 @@ var entrypoint = function () {
                 zoom: 10
             },
             defaults: {
-                doubleClickZoom: false,
-                scrollWheelZoom: false,
+//                doubleClickZoom: false,
+//                scrollWheelZoom: false,
                 attributionControl: false,
-                dragging:false,
-                zoomControl:false
+//                dragging:false,
+//                zoomControl:false
             }
         });
         updateMarkers(fogie);

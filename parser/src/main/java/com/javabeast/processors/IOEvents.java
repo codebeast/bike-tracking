@@ -2,6 +2,7 @@ package com.javabeast.processors;
 
 import com.javabeast.TrackerMessage;
 import com.javabeast.domain.gecode.VehicleTimeline;
+import com.javabeast.services.TextService;
 import com.javabeast.teltonikia.GpsElement;
 import com.javabeast.teltonikia.IOEvent;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -29,9 +30,14 @@ public class IOEvents {
 
     private final Map<String, VehicleTimeline> imeiToVehicleTimeline = new ConcurrentHashMap<>();
 
+    private final MessageService messageService;
+
+    private final Map<String, Boolean> imeiToMoving = new ConcurrentHashMap<>();
+
     @Autowired
-    public IOEvents(final RabbitTemplate rabbitTemplate) {
+    public IOEvents(final RabbitTemplate rabbitTemplate, final MessageService messageService) {
         this.rabbitTemplate = rabbitTemplate;
+        this.messageService = messageService;
     }
 
     public void addToQueue(final TrackerMessage message) {
@@ -40,17 +46,20 @@ public class IOEvents {
 
 
     public void processEvents(final TrackerMessage message) {
+
+
         final List<IOEvent> ioEvents = message.getIoEvents();
         for (final IOEvent ioEvent : ioEvents) {
-
             if (ioEvent.getType() == 240) {
                 final boolean moving = ioEvent.getValue() == 1;
                 System.out.println(moving ? "Vehicle moving" : "vehicle stopped");
+                final Boolean wasMoving = imeiToMoving.getOrDefault(message.getImei(), false);
+                if (!wasMoving && moving) {
+                    messageService.addToQueue(message);
+                }
+                imeiToMoving.put(message.getImei(), moving);
             }
-
         }
-
-
     }
 
     private boolean didGpsMove(final TrackerMessage lastRecievedMessage, final TrackerMessage message) {
