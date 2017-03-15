@@ -10,75 +10,70 @@
 <div th:include="fragments/navbar :: navbar(false)" th:remove="tag"></div>
 
 <main>
-    <form th:action="@{/login}" method="post">
-        <div class="row">
-            <div class="col 12">
-                <div class="card white">
-                    <div class="card-content black-text">
-                        <div class="row">
-                            <div class="col s12 center">
-                                <h5>Account Login</h5>
-                            </div>
 
-                            <div class="col s12 center red-text">
-                                <div th:if="${param.error}">
-                                    Invalid username and password.
-                                </div>
-                                <div th:if="${param.logout}">
-                                    You have been logged out.
-                                </div>
-                            </div>
-
-                            <div class="input-field col s12">
-                                <input id="email_address" type="text" class="validate" name="username"/>
-                                <label for="email_address">Email Address</label>
-                            </div>
-
-                            <div class="input-field col s12">
-                                <input id="password" type="password" class="validate" name="password"/>
-                                <label for="password">Password</label>
-                            </div>
-
-                            <div class="input-field col s12 center">
-                                <button type="submit">
-                                    <a class="waves-effect waves-light btn orange"><i
-                                            class="material-icons right">cloud</i>Login</a>
-                                </button>
-                            </div>
-                        </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="row">
+                <div class="col s12 center">
+                    <h5>Login</h5>
+                    <p class="grey-text">Track your bike in real-time</p>
+                    <div class="fb-login-button center" style="width:100%" data-max-rows="1" data-size="large"
+                         data-show-faces="false"
+                         scope="public_profile,email" onlogin="checkLoginState();"
+                         data-auto-logout-link="true"> login with Facebook
                     </div>
                 </div>
-            </div>
 
-            <div class="col s12 center">
-                <div class="divider"></div>
-            </div>
+                <div class="col s12 center">
+                    <p class="grey-text lighten-2" style="margin-top:10px">Or</p>
+                </div>
 
-            <div class="col 12">
-                <div class="card white">
-                    <div class="card-content black-text">
-                        <div class="row">
-                            <div class="col s12 center">
-                                <a class="waves-effect waves-light">Forgot username or password?</a>
+                <div class="col s12">
+                    <form th:action="@{/login}" method="post">
+
+                        <div class="col s12 center red-text">
+                            <div th:if="${param.error}">
+                                Invalid username and password.
                             </div>
+                            <div th:if="${param.logout}">
+                                You have been logged out.
+                            </div>
+                            <!--<div id="status"></div>-->
+
                         </div>
-                    </div>
+
+                        <div class="input-field col s12">
+                            <input id="email_address" type="text" class="validate" name="username"/>
+                            <label for="email_address">Email Address</label>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <input id="password" type="password" class="validate" name="password"/>
+                            <label for="password">Password</label>
+                        </div>
+
+                        <div class="input-field col s12 center">
+                            <button type="submit">
+                                <a class="waves-effect waves-light btn orange"><i
+                                        class="material-icons right">vpn_key</i>Login</a>
+                            </button>
+                        </div>
+                        <div class="col s12" style="margin-top:10px">
+                            <div class="divider"></div>
+                            <a style="width:100%;margin-top:10px" class="waves-effect waves-light center">Forgot email or password?</a>
+                        </div>
+
+
+                    </form>
+
                 </div>
             </div>
-            <!--<div class="card white">-->
-            <!--<div class="card-content black-text">-->
-            <!--<div class="row">-->
-            <!--<div class="input-field col s12 center">-->
-            <!--<a class="waves-effect waves-light">Create an account</a>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
         </div>
-    </form>
+    </div>
 </main>
 
 <div th:include="fragments/scripts :: scripts" th:remove="tag"></div>
+
 
 </body>
 </html>
