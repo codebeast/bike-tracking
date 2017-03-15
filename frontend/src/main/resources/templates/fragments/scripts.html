@@ -10,11 +10,13 @@
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-92258888-1', 'auto');
   ga('send', 'pageview');
-</script>
 
+
+    </script>
 
 
     <script>
+    // <![CDATA[
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -84,10 +86,25 @@
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
+      /* make the API call */
+FB.api(
+    "/" + response.id + "/picture?type=large",
+    function (response) {
+      if (response && !response.error) {
+        /* handle the result */
+        console.log(response.data.url);
+      }
+    });
+
+
+
+
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
     });
   }
-</script>
+// ]]>
+
+    </script>
 </div>
 </html>

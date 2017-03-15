@@ -14,98 +14,46 @@
     <div class="container">
         <div class="row">
             <div class="col s12">
-                <h5 class="text center">Create your account</h5>
+                <h5 class="text center">Create Account</h5>
 
 
                 <div class="card white lighten-2">
                     <div class="card-content grey-text lighten-3">
-                        <p class="center flow-text">To speed things up, you can create your account with facebook,
-                            alternatively please fill in the form below</p>
+                        <p class="center flow-text">To speed things up, you can create your account with facebook</p>
                         <p class="center flow-text"><a href="/login">Already have an account?</a></p>
                     </div>
                 </div>
 
 
                 <div class="center">
-                    <button type="submit" style="width:100%">
-                        <a class="waves-effect waves-light btn orange center" style="width:100%">Login with Facebook</a>
-                    </button>
+
+                    <div class="fb-login-button center" style="width:100%" data-max-rows="1" data-size="large"
+                         data-show-faces="false"
+                         scope="public_profile,email" onlogin="checkLoginState();"
+                         data-auto-logout-link="true"> Continue with Facebook
+                    </div>
                 </div>
 
                 <p class="center grey-text lighten-3 flow-text"> or </p>
 
                 <div>
-
-                    <div class="input-field col s12">
-                        <input id="first_name" type="text" class="validate" name="first_name"/>
-                        <label for="first_name">First Name</label>
-                    </div>
-
-                    <div class="input-field col s12">
-                        <input id="last_name" type="text" class="validate" name="last_name"/>
-                        <label for="last_name">Last Name</label>
-                    </div>
-
                     <div class="input-field col s12">
                         <input id="email_address" type="text" class="validate" name="username"/>
                         <label for="email_address">Email Address</label>
                     </div>
-
                     <div class="input-field col s12">
                         <input id="password" type="password" class="validate" name="password"/>
                         <label for="password">Password</label>
                     </div>
-
-                    <div class="input-field col s12">
-                        <input id="confirm_password" type="password" class="validate" name="password"/>
-                        <label for="confirm_password">Confirm Password</label>
-                    </div>
-
                     <div class="input-field col s12 center">
-                        <button type="submit">
-                            <a class="waves-effect waves-light btn orange">Create Account</a>
-                        </button>
+                        <div>
+                            <a class="waves-effect waves-light btn orange" type="submit">Create Account</a>
+                        </div>
                     </div>
-
-
                 </div>
-
             </div>
-
         </div>
     </div>
-
-    <!--<h1>Checkout</h1>-->
-
-    <!--<div class="row">-->
-    <!--<div class="input-field col s12 m6 l4">-->
-    <!--<select>-->
-    <!--<option selected="" value="1">1 unit - £199</option>-->
-    <!--<option value="2">2 units - £380</option>-->
-    <!--<option value="3">3 units - £545</option>-->
-    <!--<option value="4">4 units - £715</option>-->
-    <!--</select>-->
-    <!--<label>Select number Of units required</label>-->
-    <!--</div>-->
-
-    <!--<div class="input-field col s12 m6 l4">-->
-    <!--<select>-->
-    <!--<option selected="" value="m">£9.99 monthly</option>-->
-    <!--<option value="a1">£99 - 1 Year</option>-->
-    <!--<option value="a2">£269 - 3 Years</option>-->
-    <!--</select>-->
-    <!--<label>Select your payment plan</label>-->
-    <!--</div>-->
-
-    <!--<div class="col s12 m6 l4">-->
-    <!--<button class="center">Buy now £199</button>-->
-    <!--</div>-->
-
-    <!--<div class="col s12 m6 l4">-->
-    <!--<p>Checkout powered by stripe</p>-->
-    <!--</div>-->
-
-    <!--</div>-->
 </main>
 
 <div th:include="fragments/scripts :: scripts" th:remove="tag"></div>
