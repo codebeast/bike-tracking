@@ -13,13 +13,19 @@ public class CheckoutController {
 
 
     private static final String VIEW_NAME = "checkout";
+    private static final String OPTION_VIEW_NAME = "checkout_option";
 
     public CheckoutController() {
     }
 
     @GetMapping
-    public ModelAndView getMap() {
+    public ModelAndView getCheckout() {
         return new ModelAndView(VIEW_NAME, new HashMap<>());
+    }
+
+    @GetMapping("/options")
+    public ModelAndView getOptions() {
+        return new ModelAndView(OPTION_VIEW_NAME, new HashMap<>());
     }
 
 }
