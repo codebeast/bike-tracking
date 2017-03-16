@@ -19,33 +19,74 @@
 
                 <div class="card white lighten-2">
                     <div class="card-content grey-text lighten-3">
-                        <p class="center flow-text">To get you to the right place you'll need to create an account, if
-                            you're
-                            already an existing customer please click existing customer to login</p>
+                        <p class="center flow-text">To get you to the right place you'll need to create an account</p>
+                        <div class="center">
+                            <div>
+                                <a href="/createaccount" class="waves-effect waves-light btn orange center"
+                                   type="submit"
+                                   style="width:100%">New
+                                    Customer</a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-
-                <div class="center">
-                    <div>
-                        <a href="/createaccount" class="waves-effect waves-light btn orange center" type="submit"
-                           style="width:100%">New
-                            Customer</a>
-                    </div>
-                </div>
 
                 <p class="center grey-text lighten-3 flow-text"> or </p>
 
-                <div class="center">
-                    <div>
-                        <a href="/login?redirect=checkout" class="waves-effect waves-light btn orange center"
-                           type="submit"
-                           style="width:100%">Existing Customer</a>
-                    </div>
+
+                <h5 class="center">Login</h5>
+                <div class="fb-login-button center" style="width:100%" data-max-rows="1" data-size="large"
+                     data-show-faces="false"
+                     scope="public_profile,email" onlogin="checkLoginState();"
+                     data-auto-logout-link="true"> Continue with Facebook
                 </div>
+
+
                 <a href="/checkout/options" style="width:100%;margin-top:10px"
                    class="waves-effect waves-light center flow-text">
                     GO TO PAYMENT TEST</a>
+
+
+                <form th:action="@{/login}" method="post">
+
+                    <div class="col s12 center red-text">
+                        <div th:if="${param.error}">
+                            Invalid username and password.
+                        </div>
+                        <div th:if="${param.logout}">
+                            You have been logged out.
+                        </div>
+                        <!--<div id="status"></div>-->
+
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input id="email_address" type="text" class="validate" name="username"/>
+                        <label for="email_address">Email Address</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate" name="password"/>
+                        <label for="password">Password</label>
+                    </div>
+
+                    <div class="col s12 center">
+                        <div>
+                            <a class="waves-effect waves-light btn orange" type="submit">Login</a>
+                        </div>
+                    </div>
+                    <div class="col s12" style="margin-top:10px">
+                        <div class="divider"></div>
+                        <a style="width:100%;margin-top:10px" class="waves-effect waves-light center flow-text">Help, I
+                            forgot my username or password.</a>
+
+                        <a href="/createaccount" style="width:100%;margin-top:10px"
+                           class="waves-effect waves-light center flow-text">
+                            Create Account</a>
+                    </div>
+                </form>
             </div>
 
         </div>
