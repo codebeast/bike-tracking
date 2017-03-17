@@ -16,39 +16,93 @@
             <div class="col s12">
                 <h5 class="text center">Payment</h5>
             </div>
-            <p> &nbsp;</p>
-
-            <div class="col s12 center">
-                <p>Continue with facebook</p>
-                <p>Or</p>
-                <p>Email</p>
-
-                <div class="divider"></div>
-
-                <p>Name</p>
-                <p>Address 1</p>
-                <p>Address 2</p>
-                <p>Address 3</p>
-                <p>Postcode / zip</p>
-
-                <div class="divider"></div>
-
-                <p>card number</p>
-                <p>exp date</p>
-                <p>ccv</p>
 
 
-            </div>
+            <form>
 
-
-            <div class="col s12">
                 <div class="card white lighten-2">
-                    <div class="card-content">
-                        <h4 class="center flow-text">Total Cost Today</h4>
-                        <h4 class="center flow-text grey-text lighten-3">£199</h4>
+                    <div class="card-content grey-text lighten-3">
+                        <div class="flow-text">Account</div>
                         <div class="center">
-                            <a class="waves-effect waves-light btn orange" type="submit">Pay Now</a>
+                            <div class="fb-login-button center" style="width:100%" data-max-rows="1" data-size="large"
+                                 data-show-faces="false"
+                                 scope="public_profile,email" onlogin="checkLoginState();"
+                                 data-auto-logout-link="true"> Continue with Facebook
+                            </div>
                         </div>
+                        <p class="center flow-text">Or</p>
+                        <div class="input-field">
+                            <input id="email" type="email" class="validate"/>
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card white lighten-2">
+                    <div class="card-content grey-text lighten-3">
+                        <div class="flow-text">Address</div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="first_name" type="text" class="validate"/>
+                                <label for="first_name">First Name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="last_name" type="text" class="validate"/>
+                                <label for="last_name">Last Name</label>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <input id="building_name" type="text" class="validate"/>
+                            <label for="building_name">Building Name / Number</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="street" type="text" class="validate"/>
+                            <label for="street">Street</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="city" type="text" class="validate"/>
+                            <label for="city">City</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="country" type="text" class="validate"/>
+                            <label for="country">Country</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="postcode" type="text" class="validate"/>
+                            <label for="postcode">Postcode</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card white lighten-2">
+                    <div class="card-content grey-text lighten-3">
+                        <div class="flow-text">Card Details</div>
+                        <div class="input-field">
+                            <input id="card_number" type="number" class="validate"/>
+                            <label for="card_number">Card Number</label>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="ccv" type="number" class="validate"/>
+                                <label for="ccv">CCV</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="exp_date" type="text" class="validate"/>
+                                <label for="exp_date">Expiry Date</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+
+            <div class="card white lighten-2">
+                <div class="card-content">
+                    <h4 class="center flow-text">Total Cost Today</h4>
+                    <h4 class="center flow-text grey-text lighten-3">£199</h4>
+                    <div class="center">
+                        <a class="waves-effect waves-light btn orange" type="submit">Pay Now</a>
                     </div>
                 </div>
             </div>
@@ -63,6 +117,8 @@
       $(document).ready(function() {
     $('select').material_select();
   });
+
+
 
 
 
