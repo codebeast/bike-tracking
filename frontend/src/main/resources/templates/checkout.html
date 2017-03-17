@@ -3,67 +3,62 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head>
-    <title th:text="#{checkout.title}"></title>
+    <title th:text="#{home.title}"></title>
 
-    <div th:include="fragments/includes :: includes(true)" th:remove="tag"></div>
+    <div th:include="fragments/includes :: includes(false)" th:Remove="tag"></div>
 
-    <meta name="description" th:content="#{checkout.meta.description}"/>
-    <meta property="og:title" th:content="#{checkout.title}"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" th:content="${canonical}"/>
-    <meta property="og:description" th:content="#{checkout.meta.description}"/>
-    <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:url" th:content="${canonical}"/>
-    <meta name="twitter:title" th:content="#{checkout.title}"/>
-    <meta name="twitter:description" th:content="#{checkout.meta.description}"/>
 </head>
-
 <body>
-
+<div th:include="fragments/navbar :: navbar(false)" th:remove="tag"></div>
 <main>
-    <div th:include="fragments/navbar :: navbar" th:remove="tag"></div>
 
-    <h1 style="margin-top: 50px">Checkout</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h5 class="text center">Checkout</h5>
+            </div>
+            <p> &nbsp;</p>
+            <div class="input-field col s12">
+                <input value="1" id="count" type="number" class="validate"/>
+                <label>How many trackers?</label>
+            </div>
 
-    <div class="row">
-        <div class="input-field col s12 m6 l4">
-            <select>
-                <option selected="" value="1">1 unit - £199</option>
-                <option value="2">2 units - £380</option>
-                <option value="3">3 units - £545</option>
-                <option value="4">4 units - £715</option>
-            </select>
-            <label>Select number Of units required</label>
+            <div class="divider"></div>
+
+            <div class="input-field col s12">
+                <select>
+                    <option selected="" value="m">£9.99 - Monthly</option>
+                    <option value="a1">£100 - Annually</option>
+                </select>
+                <label>Billing frequency</label>
+            </div>
+
+            <div class="col s12">
+
+                <div class="card white lighten-2">
+                    <div class="card-content">
+                        <h4 class="center flow-text">Total Cost Today</h4>
+                        <h4 class="center flow-text grey-text lighten-3">£199</h4>
+                        <div class="center">
+                            <a href="/payment" class="waves-effect waves-light btn orange" type="submit">To Payment
+                                Screen</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="input-field col s12 m6 l4">
-            <select>
-                <option selected="" value="m">£9.99 monthly</option>
-                <option value="a1">£99 - 1 Year</option>
-                <option value="a2">£269 - 3 Years</option>
-            </select>
-            <label>Select your payment plan</label>
-        </div>
-
-        <div class="col s12 m6 l4">
-            <button class="center">Buy now £199</button>
-        </div>
-
-        <div class="col s12 m6 l4">
-            <p>Checkout powered by stripe</p>
-        </div>
-
     </div>
+
 </main>
 
-<div th:include="fragments/footer :: footer"></div>
-<div th:include="fragments/scripts :: scripts"></div>
-
+<div th:include="fragments/scripts :: scripts" th:remove="tag"></div>
 <script>
-  $(document).ready(function() {
+      $(document).ready(function() {
     $('select').material_select();
   });
 </script>
+
+<div th:include="fragments/footer :: footer"></div>
 
 </body>
 </html>
