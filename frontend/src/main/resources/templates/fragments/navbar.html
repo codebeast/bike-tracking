@@ -1,5 +1,5 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
-<div th:fragment="navbar">
+<div th:fragment="navbar(showOptions)">
     <ul id="dropdown1" class="dropdown-content">
         <li th:each="state : ${T(com.javabeast.domain.Language).values()}" th:value="${state}">
             <a th:href="${#httpServletRequest.requestURL.toString()} + '?lang=' + ${state.displayName}"
@@ -25,8 +25,8 @@
     <div class="navbar-fixed">
         <nav class="white" role="navigation">
             <div class="nav-wrapper container">
-                <a id="logo-container" href="/" class="brand-logo hide-on-med-and-down">Bike Tracker</a>
-                <a id="logo-container2" href="/" class="brand-logo hide-on-large-only left">Bike Tracker</a>
+                <a id="logo-container" href="/" class="brand-logo hide-on-med-and-down">BT</a>
+                <a id="logo-container2" href="/" class="brand-logo hide-on-large-only left">BT</a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="/#features" th:text="#{home.features.button.text}">Placeholder</a></li>
                     <li><a href="/#pricing" th:text="#{home.pricing.button.text}">Placeholder</a></li>
@@ -65,6 +65,7 @@
     </div>
 
 
+<<<<<<< HEAD
     <div class="container hide-on-large-only" style="margin-top:20px">
         <div class="row black-text">
             <div class="col s4 m2 offset-m3 center">
@@ -75,6 +76,23 @@
             </div>
             <div class="col s4 m2 center">
                 <a href="" class="black-text" th:text="#{home.login.button.text}">Placeholder</a>
+=======
+    <div th:if="${showOptions}" th:remove="tag">
+        <div class="container hide-on-large-only" style="margin-top:20px">
+            <div class="row black-text">
+                <div class="col s4 m2 offset-m3 center">
+                    <a href="#features" class="black-text" style="font-size:1rem"
+                       th:text="#{home.features.button.text}">Placeholder</a>
+                </div>
+                <div class="col s4 m2 center">
+                    <a href="#pricing" class="black-text" th:text="#{home.pricing.button.text}">Placeholder</a>
+                </div>
+                <div class="col s4 m2 center">
+                    <a href="/login" class="black-text" th:text="#{home.login.button.text}">Placeholder</a>
+                    <!--<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" scope="public_profile,email" onlogin="checkLoginState();"-->
+                         <!--data-auto-logout-link="true" ></div>-->
+                </div>
+>>>>>>> 6eda924a370eaadf7f14e2353448b3c9a0cf53cd
             </div>
         </div>
     </div>

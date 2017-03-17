@@ -1,61 +1,59 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <!-- CSS  -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-    <link href="/stylesheets/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <title th:text="#{home.title}"></title>
 
-    <link rel="stylesheet" href="stylesheets/style.css" type="text/css"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+    <div th:include="fragments/includes :: includes(false)" th:Remove="tag"></div>
 
 </head>
+<body>
+<div th:include="fragments/navbar :: navbar(false)" th:remove="tag"></div>
+<main>
 
-<body class="main-background-image">
-<div class="container" style="min-height:800px">
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h5 class="text center">Create Account</h5>
 
-    <div class="row">
-        <form class="col s12 m6 l4 offset-m3 offset-l4  ">
-            <div class="row">
-                <form th:action="@{/createaccount}" th:object="${newAccountDTO}" method="post">
-                    <div class="input-field col s12 center">
-                        <h4 class="white-text">Bike Tracking</h4>
+
+                <div class="card white lighten-2">
+                    <div class="card-content grey-text lighten-3">
+                        <p class="center flow-text">To speed things up, you can create your account with facebook</p>
+                        <div class="center">
+
+                            <div class="fb-login-button center" style="width:100%" data-max-rows="1" data-size="large"
+                                 data-show-faces="false"
+                                 scope="public_profile,email" onlogin="checkLoginState();"
+                                 data-auto-logout-link="true"> Continue with Facebook
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-field col s12 center">
-                        Create Account
-                    </div>
+                </div>
 
+                <p class="center grey-text lighten-3 flow-text"> or </p>
+
+                <div>
                     <div class="input-field col s12">
-                        <input id="icon_prefix" type="text" class="validate white-text" autocomplete='off' th:field="*{email}"/>
-                        <label for="icon_prefix">Email Address</label>
+                        <input id="email_address" type="text" class="validate" name="username"/>
+                        <label for="email_address">Email Address</label>
                     </div>
-
                     <div class="input-field col s12">
-                        <input id="password" type="password" class="validate white-text" autocomplete='off' th:field="*{password}"/>
+                        <input id="password" type="password" class="validate" name="password"/>
                         <label for="password">Password</label>
                     </div>
-
-                    <div class="input-field col s12">
-                        <input id="password_confirm" type="password" class="validate white-text" autocomplete='off'  th:field="*{passwordConfirm}"/>
-                        <label for="password_confirm">Confirm Password</label>
+                    <div class="input-field col s12 center">
+                        <div>
+                            <a class="waves-effect waves-light btn orange" type="submit">Create Account</a>
+                        </div>
                     </div>
-
-                    <div class="col s12 center">
-                        <button class="btn waves-effect waves-light center" type="submit" name="action">Create My
-                            Account
-                            <i class="material-icons right">send</i>
-                        </button>
-                    </div>
-                </form>
+                    <p class="center flow-text"><a href="/login">Already have an account?</a></p>
+                </div>
             </div>
-        </form>
+        </div>
     </div>
-</div>
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="/javascripts/materialize.js"></script>
-<script src="/javascripts/init.js"></script>
-<div class="hiddendiv common"></div>
-</body>
+</main>
 
+<div th:include="fragments/scripts :: scripts" th:remove="tag"></div>
+</body>
 </html>

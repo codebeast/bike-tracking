@@ -18,7 +18,7 @@
 </head>
 <body>
 
-<div th:include="fragments/navbar :: navbar" th:remove="tag"></div>
+<div th:include="fragments/navbar :: navbar(true)" th:remove="tag"></div>
 
 <main>
     <div th:with="image='/images/landing-min.png'" th:remove="tag">
@@ -38,7 +38,7 @@
 
     <div class="divider"></div>
 
-    <div th:include="fragments/usp :: usp"></div>
+    <div th:include="fragments/usp :: usp" id="whoweare" name="whoweare"></div>
 
     <div class="divider"></div>
 
