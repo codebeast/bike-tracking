@@ -15,88 +15,48 @@
         <div class="row">
             <div class="col s12">
                 <h5 class="text center">Checkout</h5>
-
-
-                <div class="card white lighten-2">
-                    <div class="card-content grey-text lighten-3">
-                        <p class="center flow-text">To get you to the right place you'll need to create an account</p>
-                        <div class="center">
-                            <div>
-                                <a href="/createaccount" class="waves-effect waves-light btn orange center"
-                                   type="submit"
-                                   style="width:100%">New
-                                    Customer</a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-
-                <p class="center grey-text lighten-3 flow-text"> or </p>
-
-
-                <h5 class="center">Login</h5>
-                <div class="fb-login-button center" style="width:100%" data-max-rows="1" data-size="large"
-                     data-show-faces="false"
-                     scope="public_profile,email" onlogin="checkLoginState();"
-                     data-auto-logout-link="true"> Continue with Facebook
-                </div>
-
-
-                <a href="/checkout/options" style="width:100%;margin-top:10px"
-                   class="waves-effect waves-light center flow-text">
-                    GO TO PAYMENT TEST</a>
-
-
-                <form th:action="@{/login}" method="post">
-
-                    <div class="col s12 center red-text">
-                        <div th:if="${param.error}">
-                            Invalid username and password.
-                        </div>
-                        <div th:if="${param.logout}">
-                            You have been logged out.
-                        </div>
-                        <!--<div id="status"></div>-->
-
-                    </div>
-
-                    <div class="input-field col s12">
-                        <input id="email_address" type="text" class="validate" name="username"/>
-                        <label for="email_address">Email Address</label>
-                    </div>
-
-                    <div class="input-field col s12">
-                        <input id="password" type="password" class="validate" name="password"/>
-                        <label for="password">Password</label>
-                    </div>
-
-                    <div class="col s12 center">
-                        <div>
-                            <a class="waves-effect waves-light btn orange" type="submit">Login</a>
-                        </div>
-                    </div>
-                    <div class="col s12" style="margin-top:10px">
-                        <div class="divider"></div>
-                        <a style="width:100%;margin-top:10px" class="waves-effect waves-light center flow-text">Help, I
-                            forgot my username or password.</a>
-
-                        <a href="/createaccount" style="width:100%;margin-top:10px"
-                           class="waves-effect waves-light center flow-text">
-                            Create Account</a>
-                    </div>
-                </form>
+            </div>
+            <p> &nbsp;</p>
+            <div class="input-field col s12">
+                <input value="1" id="count" type="number" class="validate"/>
+                <label>How many trackers?</label>
             </div>
 
+            <div class="divider"></div>
+
+            <div class="input-field col s12">
+                <select>
+                    <option selected="" value="m">£9.99 - Monthly</option>
+                    <option value="a1">£100 - Annually</option>
+                </select>
+                <label>Billing frequency</label>
+            </div>
+
+            <div class="col s12">
+
+                <div class="card white lighten-2">
+                    <div class="card-content">
+                        <h4 class="center flow-text">Total Cost Today</h4>
+                        <h4 class="center flow-text grey-text lighten-3">£199</h4>
+                        <div class="center">
+                            <a href="/payment" class="waves-effect waves-light btn orange" type="submit">To Payment
+                                Screen</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!--<h1>Checkout</h1>-->
-
-
 </main>
 
+
 <div th:include="fragments/scripts :: scripts" th:remove="tag"></div>
+<script>
+      $(document).ready(function() {
+    $('select').material_select();
+  });
+
+</script>
 </body>
 </html>

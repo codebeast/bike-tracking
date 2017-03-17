@@ -14,32 +14,40 @@
     <div class="container">
         <div class="row">
             <div class="col s12">
-                <h5 class="text center">Checkout</h5>
+                <h5 class="text center">Payment</h5>
             </div>
             <p> &nbsp;</p>
-            <div class="input-field col s12">
-                <input value="1" id="count" type="number" class="validate"/>
-                <label>How many trackers?</label>
+
+            <div class="col s12 center">
+                <p>Continue with facebook</p>
+                <p>Or</p>
+                <p>Email</p>
+
+                <div class="divider"></div>
+
+                <p>Name</p>
+                <p>Address 1</p>
+                <p>Address 2</p>
+                <p>Address 3</p>
+                <p>Postcode / zip</p>
+
+                <div class="divider"></div>
+
+                <p>card number</p>
+                <p>exp date</p>
+                <p>ccv</p>
+
+
             </div>
 
-            <div class="divider"></div>
-
-            <div class="input-field col s12">
-                <select>
-                    <option selected="" value="m">£9.99 - Monthly</option>
-                    <option value="a1">£100 - Annually</option>
-                </select>
-                <label>Billing frequency</label>
-            </div>
 
             <div class="col s12">
-
                 <div class="card white lighten-2">
                     <div class="card-content">
                         <h4 class="center flow-text">Total Cost Today</h4>
                         <h4 class="center flow-text grey-text lighten-3">£199</h4>
                         <div class="center">
-                            <a class="waves-effect waves-light btn orange" type="submit">To Payment Screen</a>
+                            <a class="waves-effect waves-light btn orange" type="submit">Pay Now</a>
                         </div>
                     </div>
                 </div>
@@ -55,6 +63,9 @@
       $(document).ready(function() {
     $('select').material_select();
   });
+
+
+
 
 
 
