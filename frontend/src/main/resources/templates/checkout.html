@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
 <head>
     <title th:text="#{home.title}"></title>
 
@@ -50,13 +51,14 @@
 
 </main>
 
-
 <div th:include="fragments/scripts :: scripts" th:remove="tag"></div>
 <script>
       $(document).ready(function() {
     $('select').material_select();
   });
-
 </script>
+
+<div th:include="fragments/footer :: footer"></div>
+
 </body>
 </html>
