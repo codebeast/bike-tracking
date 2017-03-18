@@ -1,19 +1,21 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <div th:fragment="howitworks">
-    <div class="section">
-        <div class="row">
-            <div class="col s12 center"><h3 class="orange-text">How it Works</h3></div>
-            <div class="col s12 m4">
-                <div th:include="fragments/infocard :: infocard(#{howitworks.title1},#{howitworks.body1}, 'fa-user')"
-                     th:remove="tag"></div>
-            </div>
-            <div class="col s12 m4">
-                <div th:include="fragments/infocard :: infocard(#{howitworks.title2},#{howitworks.body3}, 'fa-cogs')"
-                     th:remove="tag"></div>
-            </div>
-            <div class="col s12 m4">
-                <div th:include="fragments/infocard :: infocard(#{howitworks.title3},#{howitworks.body3}, 'fa-motorcycle')"
-                     th:remove="tag"></div>
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col s12 center"><h3 class="orange-text">How it Works</h3></div>
+                <div class="col s12 m4">
+                    <div th:include="fragments/infocard :: infocard(#{howitworks.title1},#{howitworks.body1}, 'fa-user')"
+                         th:remove="tag"></div>
+                </div>
+                <div class="col s12 m4">
+                    <div th:include="fragments/infocard :: infocard(#{howitworks.title2},#{howitworks.body3}, 'fa-cogs')"
+                         th:remove="tag"></div>
+                </div>
+                <div class="col s12 m4">
+                    <div th:include="fragments/infocard :: infocard(#{howitworks.title3},#{howitworks.body3}, 'fa-motorcycle')"
+                         th:remove="tag"></div>
+                </div>
             </div>
         </div>
     </div>
