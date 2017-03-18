@@ -4,6 +4,7 @@ import java.net.URL;
 
 public enum Language {
     EN("en", "English", "landingpage_en.json", "gb"),
+    FR("fr", "Francis", "landingpage_fr.json", "fr"),
     DE("de", "Deutsch", "landingpage_de.json", "de"),
     ES("es", "Español", "landingpage_es.json", "es"),
     IT("it", "Italiano", "landingpage_it.json", "it"),
