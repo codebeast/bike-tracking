@@ -1,6 +1,8 @@
 package com.javabeast.controllers;
 
+import com.javabeast.domain.WebsiteOrder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -18,7 +20,8 @@ public class PaymentController {
     }
 
     @GetMapping
-    public ModelAndView getPayment() {
+    public ModelAndView getPayment(@RequestBody WebsiteOrder websiteOrder) {
+
         return new ModelAndView(VIEW_NAME, new HashMap<>());
     }
 
