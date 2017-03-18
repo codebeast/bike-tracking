@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <title th:text="#{terms.title}"></title>
+
+    <div th:include="fragments/includes :: includes(true)" th:remove="tag"></div>
+
+    <meta name="description" th:content="#{terms.meta.description}"/>
+    <meta property="og:title" th:content="#{terms.title}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" th:content="${canonical}"/>
+    <meta property="og:description" th:content="#{terms.meta.description}"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:url" th:content="${canonical}"/>
+    <meta name="twitter:title" th:content="#{terms.title}"/>
+    <meta name="twitter:description" th:content="#{terms.meta.description}"/>
+</head>
+
+<body>
+
+<div th:include="fragments/navbar :: navbar" th:remove="tag"></div>
+
+<main>
+<div class="container">
+    <div class="section row">
+        <div class="col s12 center">
+            <h5 class="orange-text" th:text="#{terms.header}">Placeholder</h5>
+            <h5 class="black-text" th:text="#{terms.paragraph}">Placeholder</h5>
+            <br/>
+        </div>
+    </div>
+
+    <div class="section row">
+        <div class="col s12 m10 l10 offset-l1 offset-m1">
+            <div class="left">
+                <h5 class="orange-text" th:text="#{terms.header1}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph1}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph1a}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph1b}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph1c}">Placeholder</h5>
+                <br/>
+
+                <h5 class="orange-text" th:text="#{terms.header2}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph2}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph2a}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph2b}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph2c}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph2d}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph2e}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph2f}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph2g}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph2h}">Placeholder</h5>
+                <br/>
+
+                <h5 class="orange-text" th:text="#{terms.header3}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph3}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph3a}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph3b}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph3c}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph3d}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph3e}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph3f}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph3g}">Placeholder</h5>
+                <br/>
+
+                <h5 class="orange-text" th:text="#{terms.header4}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph4}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph4a}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph4b}">Placeholder</h5>
+                <br/>
+
+                <h5 class="orange-text" th:text="#{terms.header5}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph5}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph5a}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph5b}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph5c}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph5d}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph5e}">Placeholder</h5>
+
+                <br/>
+
+                <h5 class="orange-text" th:text="#{terms.header6}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph6}">Placeholder</h5>
+                <br/>
+
+                <h5 class="orange-text" th:text="#{terms.header7}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph7}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph7a}">Placeholder</h5>
+                <br/>
+
+                <h5 class="orange-text" th:text="#{terms.header8}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph8}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph8a}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph8b}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph8c}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph8d}">Placeholder</h5>
+                <br/>
+
+                <h5 class="orange-text" th:text="#{terms.header9}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph9}">Placeholder</h5>
+                <br/>
+
+                <h5 class="orange-text" th:text="#{terms.header10}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph10}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph10a}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph10b}">Placeholder</h5>
+                <h5 class="black-text" th:text="#{terms.paragraph10c}">Placeholder</h5>
+                <br/>
+
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>
+
+</main>
+
+<div th:include="fragments/footer :: footer"></div>
+<div th:include="fragments/scripts :: scripts"></div>
+
+</body>
+</html>

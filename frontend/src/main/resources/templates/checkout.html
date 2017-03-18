@@ -1,6 +1,65 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<<<<<<< HEAD
+
+<head>
+    <title th:text="#{checkout.title}"></title>
+
+    <div th:include="fragments/includes :: includes(true)" th:remove="tag"></div>
+
+    <meta name="description" th:content="#{checkout.meta.description}"/>
+    <meta property="og:title" th:content="#{checkout.title}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" th:content="${canonical}"/>
+    <meta property="og:description" th:content="#{checkout.meta.description}"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:url" th:content="${canonical}"/>
+    <meta name="twitter:title" th:content="#{checkout.title}"/>
+    <meta name="twitter:description" th:content="#{checkout.meta.description}"/>
+</head>
+
+<body>
+
+<main>
+    <div th:include="fragments/navbar :: navbar" th:remove="tag"></div>
+
+    <h1>Checkout</h1>
+
+    <div class="row">
+        <div class="input-field col s12 m6 l4">
+            <select>
+                <option selected="" value="1">1 unit - £199</option>
+                <option value="2">2 units - £380</option>
+                <option value="3">3 units - £545</option>
+                <option value="4">4 units - £715</option>
+            </select>
+            <label>Select number Of units required</label>
+        </div>
+
+        <div class="input-field col s12 m6 l4">
+            <select>
+                <option selected="" value="m">£9.99 monthly</option>
+                <option value="a1">£99 - 1 Year</option>
+                <option value="a2">£269 - 3 Years</option>
+            </select>
+            <label>Select your payment plan</label>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <button class="center">Buy now £199</button>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <p>Checkout powered by stripe</p>
+        </div>
+
+    </div>
+</main>
+
+<div th:include="fragments/footer :: footer"></div>
+<div th:include="fragments/scripts :: scripts"></div>
+=======
 <head>
     <title th:text="#{home.title}"></title>
 
@@ -50,13 +109,18 @@
 
 </main>
 
+>>>>>>> 6eda924a370eaadf7f14e2353448b3c9a0cf53cd
 
 <div th:include="fragments/scripts :: scripts" th:remove="tag"></div>
 <script>
       $(document).ready(function() {
     $('select').material_select();
   });
+<<<<<<< HEAD
+=======
 
+>>>>>>> 6eda924a370eaadf7f14e2353448b3c9a0cf53cd
 </script>
+
 </body>
 </html>
