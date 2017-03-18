@@ -1,44 +1,42 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <div th:fragment="footer">
     <footer class="page-footer orange lighten-2">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="black-text center">Company Bio</h5>
-                    <p class="black-text black-text">We are a team of dudes working on this project like
-                        it's
-                        our full time job. Any amount would help support and continue development on this project and is
-                        greatly appreciated.</p>
-                </div>
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="black-text center">Company Bio</h5>
+                <p class="black-text black-text">We are a team of dudes working on this project like
+                    it's
+                    our full time job. Any amount would help support and continue development on this project and is
+                    greatly appreciated.</p>
+            </div>
 
-                <div class="col l3 s12">
-                    <h5 class="black-text center">Tracking</h5>
-                    <ul>
-                        <li th:each="landingPage : ${landingPages}" th:value="${landingPage}">
-                            <a class="black-text black-text"
-                               th:href="${landingPage.fullUrl}"
-                               th:text="${landingPage.display}">Placeholder</a>
-                        </li>
+            <div class="col l3 s12">
+                <h5 class="black-text center">Tracking</h5>
+                <ul>
+                    <li th:each="landingPage : ${landingPages}" th:value="${landingPage}">
+                        <a class="black-text black-text"
+                           th:href="${landingPage.fullUrl}"
+                           th:text="${landingPage.display}">Placeholder</a>
+                    </li>
 
-                    </ul>
-                </div>
+                </ul>
+            </div>
 
-                <div class="col l3 s12">
-                    <h5 class="black-text center">Connect</h5>
-                    <ul>
-                        <li><a class="black-text black-text" href="#!">Link 1</a></li>
-                        <li><a class="black-text black-text" href="#!">Link 2</a></li>
-                        <li><a class="black-text black-text" href="#!">Link 3</a></li>
-                        <li><a class="black-text black-text" href="#!">Link 4</a></li>
-                    </ul>
-                </div>
+            <div class="col l3 s12">
+                <h5 class="black-text center">Connect</h5>
+                <ul>
+                    <li><a class="black-text black-text" href="#!">Link 1</a></li>
+                    <li><a class="black-text black-text" href="#!">Link 2</a></li>
+                    <li><a class="black-text black-text" href="#!">Link 3</a></li>
+                    <li><a class="black-text black-text" href="#!">Link 4</a></li>
+                </ul>
             </div>
         </div>
-        <div class="footer-copyright center">
-            <div class="container black-text">
-                Built by <a class="red-text " href="http://">Codebeast</a>
-            </div>
-        </div>
-    </footer>
 </div>
+<div class="footer-copyright center">
+    <div class="container black-text">
+        Built by <a class="red-text " href="http://">Codebeast</a>
+    </div>
+</div>
+</footer>
 </html>

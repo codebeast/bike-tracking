@@ -20,7 +20,7 @@
 
 <div th:include="fragments/navbar :: navbar(true)" th:remove="tag"></div>
 
-<main>
+<main class="container">
     <div th:with="image='/images/landing-min.png'" th:remove="tag">
         <div th:include="fragments/hero :: hero(#{home.landing.title},#{home.landing.title2},#{home.landing.blurb},#{home.landing.button.pay},#{home.landing.button.features}, ${image})"></div>
     </div>
