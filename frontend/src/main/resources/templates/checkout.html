@@ -7,9 +7,9 @@
     <div th:include="fragments/includes :: includes(false)" th:Remove="tag"></div>
 
 </head>
-<body>
+<body ng-app="main">
 <div th:include="fragments/navbar :: navbar(false)" th:remove="tag"></div>
-<main>
+<main ng-controller="PriceCalculatorController">
 
     <div class="container">
         <form th:object="${websiteOrder}" th:action="@{/checkout}" method="post" action="#">
@@ -20,14 +20,15 @@
                 </div>
                 <p> &nbsp;</p>
                 <div class="input-field col s12">
-                    <input value="1" id="count" type="number" class="validate" th:field="*{numberOfTrackers}"/>
+                    <input value="1" id="count" type="number" class="validate" th:field="*{numberOfTrackers}"
+                           ng-model="numberOfTrackers"/>
                     <label>How many trackers?</label>
                 </div>
 
                 <div class="divider"></div>
 
                 <div class="input-field col s12">
-                    <select th:field="*{subscriptionType}">
+                    <select th:field="*{subscriptionType}" ng-model="subscriptionType">
                         <option th:each="subscriptionType : ${T(com.javabeast.domain.SubscriptionType).values()}"
                                 th:value="${subscriptionType}" th:text="${subscriptionType.subscriptionType}">
                             Placeholder
@@ -41,7 +42,7 @@
                     <div class="card white lighten-2">
                         <div class="card-content">
                             <h4 class="center flow-text">Total Cost Today</h4>
-                            <h4 class="center flow-text grey-text lighten-3">£199</h4>
+                            <h4 class="center flow-text grey-text lighten-3">£{{price}}</h4>
                             <div class="center">
 
                                 <a type="submit" class="waves-effect waves-light btn orange">
@@ -59,19 +60,10 @@
 
 
 <div th:include="fragments/scripts :: scripts" th:remove="tag"></div>
-<script>
-      $(document).ready(function() {
-    $('select').material_select();
-  });
 
-
-
-
-
-
-
-
-
-</script>
+<script src="/javascripts/angular/angular.js"></script>
+<script src="/javascripts/angular/angular-leaflet-directive.js"></script>
+<script src="/javascripts/angular/app.js"></script>
+<script src="/javascripts/angular/checkout_price_calculator.js"></script>
 </body>
 </html>
