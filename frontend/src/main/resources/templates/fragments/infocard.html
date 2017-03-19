@@ -1,11 +1,11 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <div th:fragment="infocard(cardTitle, cardBody, icon, lighten)">
-    <div th:attr="class='card orange small valign-wrapper z-depth-3 ' + ${lighten}" class="" style="border-radius:10%">
+    <div th:attr="class='card orange small valign-wrapper z-depth-3 ' + ${lighten}" class="" style="border-radius:50px">
         <div class="card-content black-text valign">
-            <div class="center valign">
+            <div class="center">
                 <i th:attr="class='fa fa-4x ' + ${icon}" aria-hidden="true"></i>
             </div>
-            <span class="card-title center valign" th:utext="${cardTitle}">Card Title</span>
+            <span class="card-title center flow-text" th:utext="${cardTitle}">Card Title</span>
             <p class="center" th:utext="${cardBody}">Card Body</p>
         </div>
     </div>
