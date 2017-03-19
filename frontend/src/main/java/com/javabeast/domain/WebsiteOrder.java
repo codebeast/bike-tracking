@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class WebsiteOrder {
 
-    private int orderCount;
-    private SubscriptionType subscriptionType;
+    private int numberOfTrackers = 1;
+    private SubscriptionType subscriptionType = SubscriptionType.MONTHLY;
 
 }
