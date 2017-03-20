@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 public class WebsitePayment {
 
-    @NotNull
+   // @NotNull
     private WebsiteOrder websiteOrder;
 
     private int id;
@@ -21,22 +21,26 @@ public class WebsitePayment {
     @NotNull
     private String email;
 
+    @NotNull
     private String firstName;
+
+    @NotNull
     private String lastName;
 
     @NotNull
-    private String addressLine1;
+    private String buildingName;
 
     @NotNull
-    private String addressLine2;
+    private String street;
 
-    private String addressLine3;
-    private String addressLine4;
+    private String city;
 
-    @NotNull
+    private String country;
+
+    @NotNull(message = "Postcode can not be blank")
     private String postcode;
 
-    @NotNull
+   // @NotNull
     private String transactionCode;
 
     private double price;

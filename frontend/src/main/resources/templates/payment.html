@@ -32,7 +32,7 @@
                         </div>
                         <p class="center flow-text">Or</p>
                         <div class="input-field">
-                            <input id="email" type="email" class="validate"/>
+                            <input id="email" type="email" class="validate" th:field="*{email}"/>
                             <label for="email">Email</label>
                         </div>
                     </div>
@@ -42,33 +42,52 @@
                     <div class="card-content grey-text lighten-3">
                         <div class="flow-text">Address</div>
                         <div class="row">
+
+                            <div class="col s12">
+                                <div class="red-text text-lighten-3 flow-text"
+                                     th:errors="*{firstName}">
+                                    Placeholder
+                                </div>
+                                <div class="red-text text-lighten-3 flow-text"
+                                     th:errors="*{lastName}">
+                                    Placeholder
+                                </div>
+                            </div>
+
                             <div class="input-field col s6">
-                                <input id="first_name" type="text" class="validate"/>
+                                <input id="first_name" type="text" class="validate" th:field="*{firstName}"/>
                                 <label for="first_name">First Name</label>
                             </div>
                             <div class="input-field col s6">
-                                <input id="last_name" type="text" class="validate"/>
+                                <input id="last_name" type="text" class="validate" th:field="*{lastName}"/>
                                 <label for="last_name">Last Name</label>
                             </div>
                         </div>
                         <div class="input-field">
-                            <input id="building_name" type="text" class="validate"/>
-                            <label for="building_name">Building Name / Number</label>
+                            <input id="buildingName" type="text" class="validate" th:field="*{buildingName}"/>
+                            <label for="buildingName">Building Name / Number</label>
                         </div>
                         <div class="input-field">
-                            <input id="street" type="text" class="validate"/>
+                            <input id="street" type="text" class="validate" th:field="*{street}"/>
                             <label for="street">Street</label>
                         </div>
                         <div class="input-field">
-                            <input id="city" type="text" class="validate"/>
+                            <input id="city" type="text" class="validate" th:field="*{city}"/>
                             <label for="city">City</label>
                         </div>
                         <div class="input-field">
-                            <input id="country" type="text" class="validate"/>
+                            <input id="country" type="text" class="validate" th:field="*{country}"/>
                             <label for="country">Country</label>
                         </div>
+
+
+                        <div class="red-text text-lighten-3 flow-text"
+                             th:if="${#fields.hasErrors('postcode')}"
+                             th:errors="*{postcode}">
+                            Placeholder
+                        </div>
                         <div class="input-field">
-                            <input id="postcode" type="text" class="validate"/>
+                            <input id="postcode" type="text" class="validate" th:field="*{postcode}"/>
                             <label for="postcode">Postcode</label>
                         </div>
                     </div>
