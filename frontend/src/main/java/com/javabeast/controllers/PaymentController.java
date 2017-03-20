@@ -35,7 +35,7 @@ public class PaymentController {
             websitePayment.setWebsiteOrder(websiteOrder);
         }
 
-        websitePayment.setPrice(199.99);
+        websitePayment.setPrice(17.86);
         System.out.println("order:" + websiteOrder);
         return VIEW_NAME;
     }
