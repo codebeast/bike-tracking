@@ -17,16 +17,17 @@
                 <h5 class="text center">Payment</h5>
             </div>
 
-            <form>
-                <div class="card white lighten-2 z-depth-3">
+            <form class="col s12 l8 push-l2">
+                <div class="card white lighten-2 z-depth-3 ">
                     <div class="card-content grey-text lighten-3">
                         <div class="flow-text">Account</div>
                         <div class="center">
-                            <div class="fb-login-button center" style="width:100%" data-max-rows="1" data-size="large"
+                            <div class="fb-login-button" style="width:100%" data-max-rows="1" data-size="xlarge"
                                  data-show-faces="false"
                                  scope="public_profile,email" onlogin="checkLoginState();"
                                  data-auto-logout-link="true"> Continue with Facebook
                             </div>
+                            <div>&nbsp;</div>
                         </div>
                         <p class="center flow-text">Or</p>
                         <div class="input-field">
@@ -91,17 +92,17 @@
                         </div>
                     </div>
                 </div>
-            </form>
 
-            <div class="card white lighten-5 z-depth-5">
-                <div class="card-content">
-                    <h4 class="center flow-text">Total Cost</h4>
-                    <h4 class="center flow-text grey-text lighten-3">£199</h4>
-                    <div class="center">
-                        <a class="waves-effect waves-light btn orange" type="submit">Pay Now</a>
+                <div class="card white lighten-5 z-depth-5">
+                    <div class="card-content">
+                        <h4 class="center flow-text">Total Cost</h4>
+                        <h4 class="center flow-text grey-text lighten-3">£199</h4>
+                        <div class="center">
+                            <a class="waves-effect waves-light btn orange" type="submit">Pay Now</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 
@@ -113,6 +114,8 @@
       $(document).ready(function() {
     $('select').material_select();
   });
+
+
 
 
 

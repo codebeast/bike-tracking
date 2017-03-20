@@ -17,9 +17,7 @@ public class PaymentController {
     }
 
     @GetMapping
-    public ModelAndView getPayment(@RequestBody ModelAttribute websiteOrder) {
-        System.out.println("PaymentController.getPayment");
-        System.out.println("websiteOrder = [" + websiteOrder + "]");
+    public ModelAndView getPayment() {
         return new ModelAndView(VIEW_NAME, new HashMap<>());
     }
 
