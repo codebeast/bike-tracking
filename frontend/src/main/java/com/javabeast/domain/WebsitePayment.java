@@ -39,4 +39,6 @@ public class WebsitePayment {
     @NotNull
     private String transactionCode;
 
+    private double price;
+
 }

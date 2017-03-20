@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 @Controller
@@ -14,8 +16,6 @@ public class CheckoutController {
 
     private static final String VIEW_NAME = "checkout";
 
-    public CheckoutController() {
-    }
 
     @GetMapping
     public String getCheckout(final WebsiteOrder websiteOrder) {
@@ -23,13 +23,12 @@ public class CheckoutController {
     }
 
     @PostMapping
-    public String postCheckout(@ModelAttribute @Valid final WebsiteOrder websiteOrder, final BindingResult bindingResult) {
+    public String postCheckout(@ModelAttribute @Valid final WebsiteOrder websiteOrder, final BindingResult bindingResult, final HttpSession httpSession) {
         if (bindingResult.hasErrors()) {
             return VIEW_NAME;
         }
-        System.out.println("CheckoutController.postCheckout");
-        System.out.println("websiteOrder = [" + websiteOrder + "]");
 
+        httpSession.setAttribute("order", websiteOrder);
         return "redirect:/payment";
     }
 
