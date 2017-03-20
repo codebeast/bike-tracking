@@ -48,13 +48,17 @@ public class PaymentController {
             final List<ObjectError> allErrors = bindingResult.getAllErrors();
             for (ObjectError allError : allErrors) {
                 System.out.println(allError);
-                
+
             }
             System.out.println("errors");
             return VIEW_NAME;
         }
+
+        System.out.println(websitePayment);
+
+
         System.out.println("order complete!!");
-        return "redirect:/ordercomplete";
+        return VIEW_NAME;
     }
 
 }

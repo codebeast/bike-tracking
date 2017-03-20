@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 public class WebsitePayment {
 
-   // @NotNull
+    @NotNull
     private WebsiteOrder websiteOrder;
 
     private int id;
