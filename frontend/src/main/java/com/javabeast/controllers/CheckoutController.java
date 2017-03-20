@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -15,7 +14,6 @@ public class CheckoutController {
 
 
     private static final String VIEW_NAME = "checkout";
-
 
     @GetMapping
     public String getCheckout(final WebsiteOrder websiteOrder) {

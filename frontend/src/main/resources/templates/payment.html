@@ -17,7 +17,7 @@
                 <h5 class="text center">Payment</h5>
             </div>
 
-            <form class="col s12 l8 push-l2">
+            <form class="col s12 l8 push-l2"   th:object="${websitePayment}" action="#" th:action="/payment" method="post">
                 <div class="card white lighten-2 z-depth-3 ">
                     <div class="card-content grey-text lighten-3">
                         <div class="flow-text">Account</div>
