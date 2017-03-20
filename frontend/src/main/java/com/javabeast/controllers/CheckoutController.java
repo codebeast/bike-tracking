@@ -1,13 +1,13 @@
 package com.javabeast.controllers;
 
 import com.javabeast.domain.WebsiteOrder;
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
-import java.util.HashMap;
-import java.util.Map;
+import javax.validation.Valid;
 
-@RestController
+@Controller
 @RequestMapping("checkout")
 public class CheckoutController {
 
@@ -18,17 +18,19 @@ public class CheckoutController {
     }
 
     @GetMapping
-    public ModelAndView getCheckout() {
-        final Map<String, Object> model = new HashMap<>();
-        model.put("websiteOrder", new WebsiteOrder());
-        return new ModelAndView(VIEW_NAME, model);
+    public String getCheckout(final WebsiteOrder websiteOrder) {
+        return VIEW_NAME;
     }
 
     @PostMapping
-    public ModelAndView postCheckout(@ModelAttribute WebsiteOrder websiteOrder) {
+    public String postCheckout(@ModelAttribute @Valid final WebsiteOrder websiteOrder, final BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return VIEW_NAME;
+        }
         System.out.println("CheckoutController.postCheckout");
         System.out.println("websiteOrder = [" + websiteOrder + "]");
-        return new ModelAndView(VIEW_NAME, new HashMap<>());
+
+        return "redirect:/payment";
     }
 
 }

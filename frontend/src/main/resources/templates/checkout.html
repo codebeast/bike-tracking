@@ -19,6 +19,12 @@
                     <h5 class="text center">Checkout</h5>
                 </div>
                 <p> &nbsp;</p>
+
+                <div class="col s12 red-text text-lighten-3 flow-text" th:if="${#fields.hasErrors('numberOfTrackers')}"
+                     th:errors="*{numberOfTrackers}">
+                    Name Error
+                </div>
+
                 <div class="input-field col s12">
                     <input value="1" id="count" type="number" class="validate" th:field="*{numberOfTrackers}"
                            ng-model="numberOfTrackers"/>
@@ -44,10 +50,9 @@
                             <h4 class="center flow-text">Total Cost Today</h4>
                             <h4 class="center flow-text grey-text lighten-3">£{{price}}</h4>
                             <div class="center">
-
-                                <a type="submit" class="waves-effect waves-light btn orange">
-                                    <input type="submit" value="To Payment Screen"/>
-                                </a>
+                                <button class="waves-effect waves-light btn orange" type="submit">
+                                    Show Payment Screen
+                                </button>
                             </div>
                         </div>
                     </div>
