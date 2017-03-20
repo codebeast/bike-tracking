@@ -42,7 +42,12 @@ public class PaymentController {
 
     @PostMapping
     public String postPayment(@ModelAttribute @Valid final WebsitePayment websitePayment, final BindingResult bindingResult) {
-        return VIEW_NAME;
+        if (bindingResult.hasErrors()) {
+            System.out.println("errors");
+            return VIEW_NAME;
+        }
+        System.out.println("order complete!!");
+        return "redirect:/ordercomplete";
     }
 
 }
