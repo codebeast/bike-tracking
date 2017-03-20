@@ -1,5 +1,6 @@
 package com.javabeast.controllers;
 
+import com.javabeast.domain.SubscriptionType;
 import com.javabeast.domain.WebsiteOrder;
 import com.javabeast.domain.WebsitePayment;
 import org.springframework.stereotype.Controller;
@@ -23,7 +24,16 @@ public class PaymentController {
     @GetMapping
     public String getPayment(final WebsitePayment websitePayment, final HttpSession httpSession) {
         final WebsiteOrder websiteOrder = (WebsiteOrder) httpSession.getAttribute("order");
-        websitePayment.setWebsiteOrder(websiteOrder);
+        //handle someone skipping to the payment page without going through the order
+        //don't block this
+        if (websiteOrder == null) {
+            websitePayment.setWebsiteOrder(WebsiteOrder.builder()
+                    .numberOfTrackers(1)
+                    .subscriptionType(SubscriptionType.MONTHLY)
+                    .build());
+        } else {
+            websitePayment.setWebsiteOrder(websiteOrder);
+        }
 
         websitePayment.setPrice(199.99);
         System.out.println("order:" + websiteOrder);

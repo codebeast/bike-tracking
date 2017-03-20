@@ -21,4 +21,6 @@ public class WebsiteOrder implements Serializable {
 
     private SubscriptionType subscriptionType = SubscriptionType.MONTHLY;
 
+    private String discountCode;
+
 }
