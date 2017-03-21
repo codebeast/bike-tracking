@@ -16,11 +16,15 @@
 
     <div class="container">
         <div class="row">
-            <div class="col s12">
-                <h5 class="text center">Payment</h5>
+            <div class="col s12 l8 push-l2 center">&nbsp;</div>
+            <div class="col s12 l8 push-l2 center">
+                <a href="/checkout" class="breadcrumb black-text">Order</a>
+                <a href="#!" class="breadcrumb black-text">Payment</a>
+                <a href="#!" class="breadcrumb grey-text text-lighten-2">Confirm</a>
             </div>
 
-            <form id="payment-form" class="col s12 l8 push-l2" th:object="${websitePayment}" th:action="@{/payment}" method="post"
+            <form id="payment-form" class="col s12 l8 push-l2" th:object="${websitePayment}" th:action="@{/payment}"
+                  method="post"
                   action="#">
                 <div class="flow-text">Account</div>
                 <div class="center">
@@ -132,7 +136,8 @@
                 <div class="center">&nbsp;</div>
                 <div class="center">&nbsp;</div>
 
-                <div class="center grey-text lighten 3"><p class="center">We endeavour to ensure all bike tracker transactions are secure, always look for the green padlock at the top of the screen.</p></div>
+                <div class="center grey-text lighten 3"><p class="center">We endeavour to ensure all bike tracker
+                    transactions are secure, always look for the green padlock at the top of the screen.</p></div>
                 <div class="center">
                     <img src="/images/powered_by_stripe.png"/>
                 </div>
@@ -211,6 +216,7 @@ function stripeTokenHandler(token) {
   form.submit();
 }
 // ]]>
+
 
 
 
