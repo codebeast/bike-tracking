@@ -111,9 +111,7 @@
                 <input type="hidden" name="paymentToken" id="paymentToken" th:field="*{paymentToken}"/>
 
                 <div class="form-row">
-                    <label for="card-element">
-                        Credit or debit card
-                    </label>
+                    <div class="flow-text"> Credit or debit card &nbsp;</div>
                     <div id="card-element">
                         <!-- a Stripe Element will be inserted here. -->
                     </div>
@@ -122,17 +120,25 @@
                     <div id="card-errors"></div>
                 </div>
 
-                <button>Submit Payment</button>
-
-
                 <h4 class="center flow-text">Total Cost</h4>
                 <h4 class="center flow-text grey-text lighten-3" th:text="*{price}">Placeholder</h4>
                 <div class="center">
-                    <button class="waves-effect waves-light btn orange" type="submit">
+                    <button class="waves-effect waves-light btn blue" type="submit">
                         Pay Now
                     </button>
                 </div>
+
+                <div class="center">&nbsp;</div>
+                <div class="center">&nbsp;</div>
+                <div class="center">&nbsp;</div>
+
+                <div class="center grey-text lighten 3"><p class="center">We endeavour to ensure all bike tracker transactions are secure, always look for the green padlock at the top of the screen.</p></div>
+                <div class="center">
+                    <img src="/images/powered_by_stripe.png"/>
+                </div>
             </form>
+
+
         </div>
     </div>
 
