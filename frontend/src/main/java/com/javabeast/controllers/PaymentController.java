@@ -26,8 +26,6 @@ public class PaymentController {
     @GetMapping
     public String getPayment(final WebsitePayment websitePayment, final HttpSession httpSession) {
         final WebsiteOrder websiteOrder = (WebsiteOrder) httpSession.getAttribute("order");
-        //handle someone skipping to the payment page without going through the order
-        //don't block this
         if (websiteOrder == null) {
             websitePayment.setWebsiteOrder(WebsiteOrder.builder()
                     .numberOfTrackers(1)
@@ -42,7 +40,19 @@ public class PaymentController {
     }
 
     @PostMapping
-    public String postPayment(@ModelAttribute @Valid final WebsitePayment websitePayment, final BindingResult bindingResult) {
+    public String postPayment(@ModelAttribute @Valid final WebsitePayment websitePayment, final BindingResult bindingResult,  final HttpSession httpSession) {
+        final WebsiteOrder websiteOrder = (WebsiteOrder) httpSession.getAttribute("order");
+        if (websiteOrder == null) {
+            websitePayment.setWebsiteOrder(WebsiteOrder.builder()
+                    .numberOfTrackers(1)
+                    .subscriptionType(SubscriptionType.MONTHLY)
+                    .build());
+        } else {
+            websitePayment.setWebsiteOrder(websiteOrder);
+        }
+
+        websitePayment.setPrice(17.86);
+
         if (bindingResult.hasErrors()) {
             System.out.println("dump errors");
             final List<ObjectError> allErrors = bindingResult.getAllErrors();
@@ -56,9 +66,15 @@ public class PaymentController {
 
         System.out.println(websitePayment);
 
-
         System.out.println("order complete!!");
-        return VIEW_NAME;
+        return "redirect:/payment/complete";
+    }
+
+
+    @GetMapping("/complete")
+    public String getComplete() {
+
+        return "complete";
     }
 
 }

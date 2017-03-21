@@ -6,6 +6,9 @@
 
     <div th:include="fragments/includes :: includes(false)" th:Remove="tag"></div>
 
+    <script src="https://js.stripe.com/v2/"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+
 </head>
 <body>
 <div th:include="fragments/navbar :: navbar(false)" th:remove="tag"></div>
@@ -17,138 +20,191 @@
                 <h5 class="text center">Payment</h5>
             </div>
 
-            <form class="col s12 l8 push-l2" th:object="${websitePayment}" th:action="@{/payment}" method="post"
+            <form id="payment-form" class="col s12 l8 push-l2" th:object="${websitePayment}" th:action="@{/payment}" method="post"
                   action="#">
-                <div class="card white lighten-2 z-depth-3 ">
-                    <div class="card-content grey-text lighten-3">
-                        <div class="flow-text">Account</div>
-                        <div class="center">
-                            <div class="fb-login-button" style="width:100%" data-max-rows="1" data-size="xlarge"
-                                 data-show-faces="false"
-                                 scope="public_profile,email" onlogin="checkLoginState();"
-                                 data-auto-logout-link="true"> Continue with Facebook
-                            </div>
-                            <div>&nbsp;</div>
-                        </div>
-                        <p class="center flow-text">Or</p>
-                        <div class="input-field">
-                            <input id="email" type="email" class="validate" th:field="*{email}"/>
-                            <label for="email">Email</label>
-                        </div>
+                <div class="flow-text">Account</div>
+                <div class="center">
+                    <div class="fb-login-button" style="width:100%" data-max-rows="1" data-size="xlarge"
+                         data-show-faces="false"
+                         scope="public_profile,email" onlogin="checkLoginState();"
+                         data-auto-logout-link="true"> Continue with Facebook
                     </div>
+                    <div>&nbsp;</div>
+                </div>
+                <p class="center flow-text">Or</p>
+                <p class="red-text text-lighten-3"
+                   th:if="${#fields.hasErrors('email')}"
+                   th:errors="*{email}">
+                    Placeholder
+                </p>
+                <div class="input-field">
+                    <input id="email" type="email" class="validate" th:field="*{email}"/>
+                    <label for="email">
+                        <span class="red-text">* </span>Email
+                    </label>
                 </div>
 
-                <div class="card white lighten-2 z-depth-4">
-                    <div class="card-content grey-text lighten-3">
-                        <div class="flow-text">Address</div>
-                        <div class="row">
+                <div class="flow-text">Address</div>
+                <div class="row">
 
-                            <div class="col s12">
-                                <div class="red-text text-lighten-3 flow-text"
-                                     th:errors="*{firstName}">
-                                    Placeholder
-                                </div>
-                                <div class="red-text text-lighten-3 flow-text"
-                                     th:errors="*{lastName}">
-                                    Placeholder
-                                </div>
-                            </div>
-
-                            <div class="input-field col s6">
-                                <input id="first_name" type="text" class="validate" th:field="*{firstName}"/>
-                                <label for="first_name">First Name</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="last_name" type="text" class="validate" th:field="*{lastName}"/>
-                                <label for="last_name">Last Name</label>
-                            </div>
-                        </div>
-                        <div class="input-field">
-                            <input id="buildingName" type="text" class="validate" th:field="*{buildingName}"/>
-                            <label for="buildingName">Building Name / Number</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="street" type="text" class="validate" th:field="*{street}"/>
-                            <label for="street">Street</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="city" type="text" class="validate" th:field="*{city}"/>
-                            <label for="city">City</label>
-                        </div>
-                        <div class="input-field">
-                            <input id="country" type="text" class="validate" th:field="*{country}"/>
-                            <label for="country">Country</label>
-                        </div>
-
-
-                        <div class="red-text text-lighten-3 flow-text"
-                             th:if="${#fields.hasErrors('postcode')}"
-                             th:errors="*{postcode}">
+                    <div class="col s12 center">
+                        <p class="red-text text-lighten-3 "
+                           th:if="${#fields.hasErrors('firstName')}"
+                           th:errors="*{firstName}">
                             Placeholder
-                        </div>
-                        <div class="input-field">
-                            <input id="postcode" type="text" class="validate" th:field="*{postcode}"/>
-                            <label for="postcode">Postcode</label>
-                        </div>
+                        </p>
+                        <p class="red-text text-lighten-3"
+                           th:if="${#fields.hasErrors('lastName')}"
+                           th:errors="*{lastName}">
+                            Placeholder
+                        </p>
+
+                    </div>
+
+                    <div class="input-field col s6">
+                        <input id="first_name" type="text" class="validate" th:field="*{firstName}"/>
+                        <label for="first_name"> <span class="red-text">* </span>First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="last_name" type="text" class="validate" th:field="*{lastName}"/>
+                        <label for="last_name"> <span class="red-text">* </span>Last Name</label>
                     </div>
                 </div>
+                <p class="red-text text-lighten-3"
+                   th:if="${#fields.hasErrors('buildingName')}"
+                   th:errors="*{buildingName}">
+                    Placeholder
+                </p>
 
-                <div class="card white lighten-2 z-depth-5">
-                    <div class="card-content grey-text lighten-3">
-                        <div class="flow-text">Card Details</div>
-                        <div class="input-field">
-                            <input id="card_number" type="number" class="validate"/>
-                            <label for="card_number">Card Number</label>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input id="ccv" type="number" class="validate"/>
-                                <label for="ccv">CCV</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="exp_date" type="text" class="validate"/>
-                                <label for="exp_date">Expiry Date</label>
-                            </div>
-                        </div>
-                    </div>
+                <div class="input-field">
+                    <input id="buildingName" type="text" class="validate" th:field="*{buildingName}"/>
+                    <label for="buildingName"> <span class="red-text">* </span>Building Name / Number</label>
+                </div>
+                <p class="red-text text-lighten-3"
+                   th:if="${#fields.hasErrors('street')}"
+                   th:errors="*{street}">
+                    Placeholder
+                </p>
+
+                <div class="input-field">
+                    <input id="street" type="text" class="validate" th:field="*{street}"/>
+                    <label for="street"><span class="red-text">* </span>Street</label>
+                </div>
+                <div class="input-field">
+                    <input id="city" type="text" class="validate" th:field="*{city}"/>
+                    <label for="city">City</label>
+                </div>
+                <div class="input-field">
+                    <input id="country" type="text" class="validate" th:field="*{country}"/>
+                    <label for="country">Country</label>
+                </div>
+                <p class="red-text text-lighten-3"
+                   th:if="${#fields.hasErrors('postcode')}"
+                   th:errors="*{postcode}">
+                    Placeholder
+                </p>
+                <div class="input-field">
+                    <input id="postcode" type="text" class="validate" th:field="*{postcode}"/>
+                    <label for="postcode"><span class="red-text">* </span>Postcode</label>
                 </div>
 
-                <div class="card white lighten-5 z-depth-5">
-                    <div class="card-content">
-                        <h4 class="center flow-text">Total Cost</h4>
-                        <h4 class="center flow-text grey-text lighten-3" th:text="*{price}">Placeholder</h4>
-                        <div class="center">
-                            <button class="waves-effect waves-light btn orange" type="submit">
-                                Pay Now
-                            </button>
-                        </div>
+                <input type="hidden" name="paymentToken" id="paymentToken" th:field="*{paymentToken}"/>
+
+                <div class="form-row">
+                    <label for="card-element">
+                        Credit or debit card
+                    </label>
+                    <div id="card-element">
+                        <!-- a Stripe Element will be inserted here. -->
                     </div>
+
+                    <!-- Used to display Element errors -->
+                    <div id="card-errors"></div>
+                </div>
+
+                <button>Submit Payment</button>
+
+
+                <h4 class="center flow-text">Total Cost</h4>
+                <h4 class="center flow-text grey-text lighten-3" th:text="*{price}">Placeholder</h4>
+                <div class="center">
+                    <button class="waves-effect waves-light btn orange" type="submit">
+                        Pay Now
+                    </button>
                 </div>
             </form>
         </div>
     </div>
 
+
 </main>
 
 
 <div th:include="fragments/scripts :: scripts" th:remove="tag"></div>
+
+
 <script>
-      $(document).ready(function() {
-    $('select').material_select();
+// <![CDATA[
+    var stripe = Stripe('pk_test_7TqxylgxM9xZe6rTsc75gBD3');
+    var elements = stripe.elements();
+
+    // Custom styling can be passed to options when creating an Element.
+var style = {
+  base: {
+    // Add your base input styles here. For example:
+    fontSize: '16px',
+    lineHeight: '24px'
+  }
+};
+
+// Create an instance of the card Element
+var card = elements.create('card', {style: style, hidePostalCode:true});
+
+// Add an instance of the card Element into the `card-element` <div>
+card.mount('#card-element');
+
+card.addEventListener('change', function(event) {
+  var displayError = document.getElementById('card-errors');
+  if (event.error) {
+    displayError.textContent = event.error.message;
+  } else {
+    displayError.textContent = '';
+  }
+});
+
+// Create a token or display an error the form is submitted.
+var form = document.getElementById('payment-form');
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  stripe.createToken(card).then(function(result) {
+    if (result.error) {
+      // Inform the user if there was an error
+      var errorElement = document.getElementById('card-errors');
+      errorElement.textContent = result.error.message;
+    } else {
+      // Send the token to your server
+      stripeTokenHandler(result.token);
+    }
   });
+});
+
+function stripeTokenHandler(token) {
+  // Insert the token ID into the form so it gets submitted to the server
+  var form = document.getElementById('payment-form');
+  form.paymentToken.value = token.id;
+
+  <!--var hiddenInput = document.createElement('paymentToken');-->
+  <!--hiddenInput.setAttribute('type', 'hidden');-->
+  <!--hiddenInput.setAttribute('name', 'stripeToken');-->
+  <!--hiddenInput.setAttribute('id', token.id);-->
+  <!--form.appendChild(hiddenInput);-->
 
 
-
-
-
-
-
-
-
-
-
-
-
+  // Submit the form
+  form.submit();
+}
+// ]]>
 
 
 

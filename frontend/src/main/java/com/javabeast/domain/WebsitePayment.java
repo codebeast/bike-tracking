@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.NotNull;
 
@@ -13,24 +14,29 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 public class WebsitePayment {
 
-    @NotNull
+//    @NotNull
     private WebsiteOrder websiteOrder;
 
     private int id;
 
-    @NotNull
+    @NotNull(message = "Email can not be blank")
+    @NotBlank(message = "Email can not be blank")
     private String email;
 
-    @NotNull
+    @NotNull(message = "First name can not be blank")
+    @NotBlank(message = "First name can not be blank")
     private String firstName;
 
-    @NotNull
+    @NotNull(message = "Last name can not be blank")
+    @NotBlank(message = "Last name can not be blank")
     private String lastName;
 
-    @NotNull
+    @NotNull(message = "Building name / number can not be blank")
+    @NotBlank(message = "Building name / number can not be blank")
     private String buildingName;
 
-    @NotNull
+    @NotNull(message = "Street can not be blank")
+    @NotBlank(message = "Street can not be blank")
     private String street;
 
     private String city;
@@ -38,10 +44,12 @@ public class WebsitePayment {
     private String country;
 
     @NotNull(message = "Postcode can not be blank")
+    @NotBlank(message = "Postcode can not be blank")
     private String postcode;
 
-   // @NotNull
-    private String transactionCode;
+    @NotNull
+    @NotBlank
+    private String paymentToken;
 
     private double price;
 
