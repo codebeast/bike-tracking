@@ -52,6 +52,12 @@
             <artifactId>selenium-chrome-driver</artifactId>
             <version>3.3.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.stripe</groupId>
+            <artifactId>stripe-java</artifactId>
+            <version>4.0.0</version>
+        </dependency>
     </dependencies>
 
     <properties>
