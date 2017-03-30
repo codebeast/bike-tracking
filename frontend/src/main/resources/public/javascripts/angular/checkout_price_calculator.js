@@ -25,7 +25,21 @@ var entrypoint = function () {
                     price = unitPrice * count;
                 }
                 $scope.price = price;
-           })
+           });
+
+           $scope.getBillingType = function() {
+                return $scope.subscriptionType == 'MONTHLY' ? 'Monthly Billing' : 'Annual Billing';
+           };
+
+           $scope.getBillingPrice = function () {
+                return $scope.subscriptionType == 'MONTHLY' ? '9.99' : '99';
+           };
+
+           $scope.getBillingTotal = function() {
+                var type = $scope.subscriptionType;
+                var count = $scope.numberOfTrackers;
+                return type == 'MONTHLY' ? count * monthlyPrice : count * annualPrice;
+           };
 
        });
        PriceCalculatorController.$inject = ["$scope"];

@@ -49,6 +49,33 @@
                 <div class="col s12 l8 push-l2">
                     <div class="card white lighten-2 z-depth-3">
                         <div class="card-content">
+                            <table class="center">
+                                <thead>
+                                <tr>
+                                    <th class="center">Product</th>
+                                    <th class="center">Quantity</th>
+                                    <th class="center">Unit</th>
+                                    <th class="center">Cost</th>
+                                </tr>
+                                </thead>
+                                <tbody class="grey-text">
+                                <tr>
+                                    <td class="center">Tracker</td>
+                                    <td class="center">{{numberOfTrackers}}</td>
+                                    <td class="center">£199</td>
+                                    <td class="center">£{{numberOfTrackers * 199}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="center">{{getBillingType()}}</td>
+                                    <td class="center">{{numberOfTrackers}}</td>
+                                    <td class="center">£{{getBillingPrice()}}</td>
+                                    <td class="center">£{{getBillingTotal()}}</td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                            <div class="row"></div>
                             <h4 class="center flow-text">Total Cost Today</h4>
                             <h4 class="center flow-text grey-text lighten-3">£{{price}}</h4>
                             <div class="center">
@@ -56,24 +83,25 @@
                                     Show Payment Screen
                                 </button>
                             </div>
+
                         </div>
                     </div>
 
                     <!--<div class="card white lighten-2 z-depth-4">-->
-                        <!--<div class="card-content">-->
-                            <!--<h5 class="center flow-text">Got a discount code?</h5>-->
-                            <!--<div class="input-field">-->
-                                <!--<input id="discountCode" type="text" class="validate" th:field="*{discountCode}"-->
-                                       <!--ng-model="discountcode"/>-->
-                                <!--<label>Discount code</label>-->
-                            <!--</div>-->
+                    <!--<div class="card-content">-->
+                    <!--<h5 class="center flow-text">Got a discount code?</h5>-->
+                    <!--<div class="input-field">-->
+                    <!--<input id="discountCode" type="text" class="validate" th:field="*{discountCode}"-->
+                    <!--ng-model="discountcode"/>-->
+                    <!--<label>Discount code</label>-->
+                    <!--</div>-->
 
-                            <!--<div class="center">-->
-                                <!--<button class="waves-effect waves-light btn blue">-->
-                                    <!--Apply Discount Code-->
-                                <!--</button>-->
-                            <!--</div>-->
-                        <!--</div>-->
+                    <!--<div class="center">-->
+                    <!--<button class="waves-effect waves-light btn blue">-->
+                    <!--Apply Discount Code-->
+                    <!--</button>-->
+                    <!--</div>-->
+                    <!--</div>-->
                     <!--</div>-->
                 </div>
             </div>
